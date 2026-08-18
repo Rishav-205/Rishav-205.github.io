@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fixtures - Fiji Football</title>
+    <title>Fixtures | Fiji Football Hub</title>
 
     <style>
         * {
@@ -15,23 +15,28 @@
         }
 
         body {
-            background: #f2f2f2;
+            background: #f2f5f8;
             color: #222;
         }
 
         header {
-            background: #0057b8;
+            background: linear-gradient(135deg, #0057b8, #003b7a);
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 25px 15px;
         }
 
         header h1 {
-            font-size: 28px;
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 6px;
+            font-size: 14px;
         }
 
         nav {
-            background: #003b7a;
+            background: #002b5c;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -40,63 +45,124 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 14px 18px;
+            padding: 14px 16px;
             font-weight: bold;
+            font-size: 14px;
         }
 
         nav a:hover {
-            background: #0077ff;
+            background: #0057b8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0057b8, #00a651);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 16px;
         }
 
         .container {
             max-width: 900px;
             margin: auto;
-            padding: 25px 15px;
+            padding: 30px 15px;
         }
 
-        .title {
+        .competition {
             text-align: center;
             color: #0057b8;
             margin-bottom: 20px;
         }
 
-        .match {
+        .fixture {
             background: white;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 18px;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
             text-align: center;
         }
 
         .date {
             color: #0057b8;
             font-weight: bold;
-            margin-bottom: 8px;
+            font-size: 15px;
+            margin-bottom: 10px;
         }
 
         .teams {
-            font-size: 19px;
+            font-size: 20px;
             font-weight: bold;
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
-        .time {
-            color: #666;
-            margin-bottom: 5px;
+        .vs {
+            color: #777;
+            font-size: 14px;
+            margin: 6px 0;
         }
 
         .venue {
-            color: #777;
+            color: #666;
             font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .time {
+            display: inline-block;
+            margin-top: 12px;
+            background: #0057b8;
+            color: white;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 8px;
+            background: #00a651;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .source {
+            background: white;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 12px;
+            text-align: center;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .source a {
+            color: #0057b8;
+            font-weight: bold;
         }
 
         footer {
             margin-top: 30px;
-            background: #003b7a;
+            background: #002b5c;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            margin: 5px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -104,8 +170,8 @@
 <body>
 
     <header>
-        <h1>🇫🇯 FIJI FOOTBALL</h1>
-        <p>Match Fixtures</p>
+        <h1>🇫🇯 FIJI FOOTBALL HUB</h1>
+        <p>Your home for football in Fiji</p>
     </header>
 
     <nav>
@@ -117,37 +183,172 @@
         <a href="news.html">News</a>
     </nav>
 
+    <section class="hero">
+        <h2>📅 Fixtures</h2>
+        <p>Current 2026 Fiji football fixtures</p>
+    </section>
+
     <div class="container">
 
-        <h2 class="title">📅 Upcoming Fixtures</h2>
+        <h2 class="competition">
+            🏆 Extra Premier League 2026
+        </h2>
 
-        <div class="match">
-            <div class="date">Upcoming Match</div>
-            <div class="teams">Team A ⚽ Team B</div>
-            <div class="time">⏰ Kick-off: 3:00 PM</div>
-            <div class="venue">📍 Venue: Fiji</div>
+        <!-- FIXTURE 1 -->
+        <div class="fixture">
+            <div class="date">16 August 2026</div>
+
+            <div class="teams">
+                Nasinu FC
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="teams">
+                Navua FC
+            </div>
+
+            <div class="venue">
+                📍 HFC Bank Stadium
+            </div>
+
+            <div class="time">
+                🕚 11:00 AM
+            </div>
+
+            <div class="status">
+                Fixture
+            </div>
         </div>
 
-        <div class="match">
-            <div class="date">Upcoming Match</div>
-            <div class="teams">Team C ⚽ Team D</div>
-            <div class="time">⏰ Kick-off: 7:00 PM</div>
-            <div class="venue">📍 Venue: Fiji</div>
+        <!-- FIXTURE 2 -->
+        <div class="fixture">
+            <div class="date">16 August 2026</div>
+
+            <div class="teams">
+                Tailevu Naitasiri FC
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="teams">
+                Labasa FC
+            </div>
+
+            <div class="venue">
+                📍 HFC Bank Stadium
+            </div>
+
+            <div class="time">
+                🕐 1:00 PM
+            </div>
+
+            <div class="status">
+                Fixture
+            </div>
         </div>
 
-        <div class="match">
-            <div class="date">Upcoming Match</div>
-            <div class="teams">Team E ⚽ Team F</div>
-            <div class="time">⏰ Kick-off: 3:00 PM</div>
-            <div class="venue">📍 Venue: Fiji</div>
+        <!-- FIXTURE 3 -->
+        <div class="fixture">
+            <div class="date">16 August 2026</div>
+
+            <div class="teams">
+                Suva FC
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="teams">
+                Nadroga FC
+            </div>
+
+            <div class="venue">
+                📍 HFC Bank Stadium
+            </div>
+
+            <div class="time">
+                🕒 3:00 PM
+            </div>
+
+            <div class="status">
+                Fixture
+            </div>
+        </div>
+
+        <!-- FIXTURE 4 -->
+        <div class="fixture">
+            <div class="date">16 August 2026</div>
+
+            <div class="teams">
+                Lautoka FC
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="teams">
+                Nadi FC
+            </div>
+
+            <div class="venue">
+                📍 Churchill Park
+            </div>
+
+            <div class="time">
+                🕒 3:00 PM
+            </div>
+
+            <div class="status">
+                Fixture
+            </div>
+        </div>
+
+        <!-- FIXTURE 5 -->
+        <div class="fixture">
+            <div class="date">20 September 2026</div>
+
+            <div class="teams">
+                Rewa FC
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="teams">
+                Ba FC
+            </div>
+
+            <div class="venue">
+                📍 Ratu Cakobau Park
+            </div>
+
+            <div class="time">
+                🕒 3:00 PM
+            </div>
+
+            <div class="status">
+                Upcoming
+            </div>
+        </div>
+
+        <div class="source">
+            <strong>📌 Data source</strong>
+            <p>
+                Fixtures are based on the Fiji Football Association's
+                2026 Extra Premier League competition information.
+            </p>
+
+            <p>
+                <a href="https://www.fijifootball.com.fj/competition-list/extra-premier-league-2026-2729072397/" target="_blank">
+                    View official Fiji FA fixtures
+                </a>
+            </p>
         </div>
 
     </div>
 
     <footer>
-        <p>🇫🇯 Fiji Football</p>
-        <p>© 2026 Fiji Football</p>
+        <p>🇫🇯 Fiji Football Hub</p>
+        <p>© 2026 Fiji Football Hub</p>
     </footer>
 
 </body>
-</html>
+    </html>
