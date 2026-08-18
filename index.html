@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Teams - Fiji Football</title>
+    <title>Fiji Football</title>
 
     <style>
         * {
@@ -19,21 +19,24 @@
             color: #222;
         }
 
+        /* Header */
         header {
             background: #0057b8;
             color: white;
-            text-align: center;
             padding: 20px;
+            text-align: center;
         }
 
         header h1 {
-            font-size: 28px;
+            font-size: 30px;
         }
 
         header p {
             margin-top: 5px;
+            font-size: 14px;
         }
 
+        /* Navigation */
         nav {
             background: #003b7a;
             display: flex;
@@ -52,47 +55,82 @@
             background: #0077ff;
         }
 
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0057b8, #00a651);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            background: white;
+            color: #0057b8;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Sections */
         .container {
+            padding: 25px 15px;
             max-width: 1000px;
             margin: auto;
-            padding: 25px 15px;
         }
 
-        .title {
+        .section-title {
             text-align: center;
-            color: #0057b8;
             margin-bottom: 20px;
+            color: #0057b8;
         }
 
-        .teams {
+        /* Cards */
+        .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
         }
 
-        .team {
+        .card {
             background: white;
-            padding: 25px;
+            padding: 22px;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
-        .team-icon {
-            font-size: 45px;
+        .card h3 {
             margin-bottom: 10px;
         }
 
-        .team h3 {
-            color: #0057b8;
-            margin-bottom: 8px;
-        }
-
-        .team p {
+        .card p {
             color: #666;
-            font-size: 14px;
+            margin-bottom: 15px;
         }
 
+        .card a {
+            display: inline-block;
+            background: #0057b8;
+            color: white;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 20px;
+        }
+
+        /* Footer */
         footer {
             margin-top: 30px;
             background: #003b7a;
@@ -105,11 +143,13 @@
 
 <body>
 
+    <!-- Header -->
     <header>
         <h1>🇫🇯 FIJI FOOTBALL</h1>
-        <p>Fiji Football Teams</p>
+        <p>Your home for football in Fiji</p>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <a href="index.html">Home</a>
         <a href="fixtures.html">Fixtures</a>
@@ -119,79 +159,55 @@
         <a href="news.html">News</a>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to Fiji Football 🇫🇯⚽</h2>
+        <p>Fixtures, results, teams, standings and the latest football action.</p>
+
+        <button onclick="window.location.href='fixtures.html'">
+            View Fixtures
+        </button>
+    </section>
+
+    <!-- Main Sections -->
     <div class="container">
 
-        <h2 class="title">⚽ Fiji Football Teams</h2>
+        <h2 class="section-title">Football Centre</h2>
 
-        <div class="teams">
+        <div class="cards">
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Ba FC</h3>
-                <p>Fiji Football Club</p>
+            <div class="card">
+                <h3>📅 Fixtures</h3>
+                <p>Check upcoming matches and kick-off times.</p>
+                <a href="fixtures.html">View Fixtures</a>
             </div>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Labasa FC</h3>
-                <p>Fiji Football Club</p>
+            <div class="card">
+                <h3>🏆 Teams</h3>
+                <p>Explore Fiji's football teams.</p>
+                <a href="teams.html">View Teams</a>
             </div>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Lautoka FC</h3>
-                <p>Fiji Football Club</p>
+            <div class="card">
+                <h3>📊 League Table</h3>
+                <p>See the latest league standings.</p>
+                <a href="table.html">View Table</a>
             </div>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Nadi FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
-
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Navua FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
-
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Rewa FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
-
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Suva FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
-
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Tailevu Naitasiri FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
-
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Nasinu FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
-
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Northland Tailevu FC</h3>
-                <p>Fiji Football Club</p>
+            <div class="card">
+                <h3>📰 Football News</h3>
+                <p>Keep up with the latest football updates.</p>
+                <a href="news.html">Read News</a>
             </div>
 
         </div>
 
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>🇫🇯 Fiji Football</p>
-        <p>© 2026 Fiji Football</p>
+        <p>© 2026 Fiji Football. All rights reserved.</p>
     </footer>
 
 </body>
