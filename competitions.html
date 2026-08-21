@@ -46,7 +46,7 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 13px 15px;
+            padding: 13px 14px;
             font-size: 14px;
         }
 
@@ -97,6 +97,17 @@
             opacity: 0.9;
         }
 
+        .status {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 11px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            background: white;
+            color: #0b1f4b;
+        }
+
         .competition-content {
             padding: 20px;
         }
@@ -105,6 +116,32 @@
             color: #555;
             line-height: 1.6;
             margin-bottom: 18px;
+        }
+
+        .champion {
+            background: #fff7df;
+            border-left: 5px solid #d49b00;
+            padding: 15px;
+            border-radius: 7px;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .match {
+            background: #f4f6f8;
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .date {
+            display: block;
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+            font-weight: normal;
         }
 
         details {
@@ -128,32 +165,23 @@
             background: #f4f6f8;
             padding: 14px;
             border-radius: 8px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .status {
-            display: inline-block;
-            background: #e9eef8;
-            color: #0b1f4b;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-top: 10px;
+            color: #555;
+            line-height: 1.6;
         }
 
         .coming-soon {
             font-style: italic;
+            color: #777;
         }
 
-        .important {
-            background: #fff7df;
-            border-left: 4px solid #d49b00;
-            padding: 12px;
-            margin-top: 15px;
-            border-radius: 5px;
-            font-size: 14px;
+        .info-box {
+            background: #eef4ff;
+            border-left: 4px solid #0b1f4b;
+            padding: 13px;
+            margin-top: 20px;
+            border-radius: 6px;
             line-height: 1.5;
+            font-size: 14px;
         }
 
         footer {
@@ -166,13 +194,12 @@
         }
 
         @media (max-width: 600px) {
-
             header h1 {
                 font-size: 25px;
             }
 
             nav a {
-                padding: 11px 9px;
+                padding: 11px 8px;
                 font-size: 13px;
             }
 
@@ -205,67 +232,72 @@
     <h1 class="page-title">🏆 Fiji Football Competitions</h1>
 
     <p class="intro">
-        Follow major Fiji football competitions, including fixtures,
-        results, standings and competition updates.
+        Follow major Fiji football competitions, their results,
+        fixtures, standings and latest updates.
     </p>
 
 
-    <!-- FIJI FACT -->
+    <!-- FIJI FACT 2026 -->
 
     <div class="competition-card">
 
         <div class="competition-header">
-            <h2>🏆 Fiji FACT 2026</h2>
-            <p>Fiji Football Association Cup Tournament</p>
-            <span class="status">2026 Competition</span>
+            <h2>🏆 BiC Fiji FACT 2026</h2>
+            <p>Fiji Association Cup Tournament</p>
+            <span class="status">✅ COMPLETED</span>
         </div>
 
         <div class="competition-content">
 
             <p class="competition-description">
-                Follow the latest Fiji FACT information including
-                fixtures, results, standings and tournament news.
+                The 2026 BiC Fiji FACT has been completed at
+                Subrail Park in Labasa.
             </p>
 
+            <div class="champion">
+                🥇 <strong>Champions: Ba FC</strong><br>
+                🥈 Runners-up: Navua FC<br>
+                🏆 Final: Ba 0–0 Navua<br>
+                ⚽ Penalty shootout: Ba won 3–1
+            </div>
+
             <details>
-                <summary>📅 Fixtures</summary>
+                <summary>⚽ Final Result</summary>
 
                 <div class="section-content">
-                    <p class="coming-soon">
-                        Official Fiji FACT fixtures will be added here
-                        once confirmed.
+
+                    <div class="match">
+                        Ba FC 0–0 Navua FC
+                        <span class="date">
+                            Final — 28 June 2026
+                        </span>
+                    </div>
+
+                    <div class="match">
+                        Ba FC won 3–1 on penalties
+                    </div>
+
+                </div>
+            </details>
+
+            <details>
+                <summary>📊 Tournament Information</summary>
+
+                <div class="section-content">
+                    <p>
+                        Ba completed the tournament as champions,
+                        while Navua finished as runners-up.
                     </p>
                 </div>
             </details>
 
             <details>
-                <summary>⚽ Results</summary>
+                <summary>📰 Fiji FACT News</summary>
 
                 <div class="section-content">
-                    <p class="coming-soon">
-                        Official results will appear here after matches
-                        are completed.
-                    </p>
-                </div>
-            </details>
-
-            <details>
-                <summary>📊 Standings</summary>
-
-                <div class="section-content">
-                    <p class="coming-soon">
-                        Competition standings will be added here.
-                    </p>
-                </div>
-            </details>
-
-            <details>
-                <summary>📰 News & Updates</summary>
-
-                <div class="section-content">
-                    <p class="coming-soon">
-                        Fiji FACT news and official updates will appear
-                        here.
+                    <p>
+                        Ba ended a 16-year wait for the Fiji FACT
+                        title with their victory over Navua.
                     </p>
                 </div>
             </details>
@@ -274,41 +306,41 @@
     </div>
 
 
-    <!-- BOG -->
+    <!-- BOG 2026 -->
 
     <div class="competition-card">
 
         <div class="competition-header">
             <h2>👑 Battle of the Giants 2026</h2>
             <p>BOG</p>
-            <span class="status">2026 Competition</span>
+            <span class="status">🟡 UPCOMING</span>
         </div>
 
         <div class="competition-content">
 
             <p class="competition-description">
-                Follow the Battle of the Giants with upcoming fixtures,
-                match results, standings and important tournament news.
+                The 2026 Battle of the Giants is scheduled to take
+                place later in the 2026 season.
             </p>
 
             <details>
-                <summary>📅 Fixtures</summary>
+                <summary>📅 Tournament Dates</summary>
 
                 <div class="section-content">
-                    <p class="coming-soon">
-                        Official BOG fixtures will be added here once
-                        confirmed.
+                    <p>
+                        Pool matches are scheduled for September 2026,
+                        followed by the knockout stages.
                     </p>
                 </div>
             </details>
 
             <details>
-                <summary>⚽ Results</summary>
+                <summary>⚽ Fixtures</summary>
 
                 <div class="section-content">
                     <p class="coming-soon">
-                        Official BOG results will appear here after
-                        matches are completed.
+                        Official fixtures will be added and updated
+                        here as they are confirmed.
                     </p>
                 </div>
             </details>
@@ -318,7 +350,8 @@
 
                 <div class="section-content">
                     <p class="coming-soon">
-                        BOG standings will be added here.
+                        BOG pool standings will appear here once
+                        matches begin.
                     </p>
                 </div>
             </details>
@@ -328,7 +361,7 @@
 
                 <div class="section-content">
                     <p class="coming-soon">
-                        BOG news and official updates will appear here.
+                        Latest BOG updates will be added here.
                     </p>
                 </div>
             </details>
@@ -337,41 +370,41 @@
     </div>
 
 
-    <!-- IDC -->
+    <!-- IDC 2026 -->
 
     <div class="competition-card">
 
         <div class="competition-header">
             <h2>🏝️ Inter-District Championship 2026</h2>
-            <p>IDC</p>
-            <span class="status">2026 Competition</span>
+            <p>FMF IDC</p>
+            <span class="status">🟡 UPCOMING</span>
         </div>
 
         <div class="competition-content">
 
             <p class="competition-description">
-                Follow the Inter-District Championship with fixtures,
-                results, standings and the latest tournament updates.
+                The 2026 Inter-District Championship is scheduled
+                for October 2026.
             </p>
 
             <details>
-                <summary>📅 Fixtures</summary>
+                <summary>📅 Tournament Dates</summary>
 
                 <div class="section-content">
-                    <p class="coming-soon">
-                        Official IDC fixtures will be added here once
-                        confirmed.
+                    <p>
+                        The 2026 IDC is scheduled for
+                        <strong>6–11 October 2026</strong>.
                     </p>
                 </div>
             </details>
 
             <details>
-                <summary>⚽ Results</summary>
+                <summary>⚽ Fixtures</summary>
 
                 <div class="section-content">
                     <p class="coming-soon">
-                        Official IDC results will appear here after
-                        matches are completed.
+                        Official IDC fixtures will be added here
+                        once confirmed.
                     </p>
                 </div>
             </details>
@@ -381,7 +414,8 @@
 
                 <div class="section-content">
                     <p class="coming-soon">
-                        IDC standings will be added here.
+                        IDC standings will appear here when the
+                        competition begins.
                     </p>
                 </div>
             </details>
@@ -391,7 +425,8 @@
 
                 <div class="section-content">
                     <p class="coming-soon">
-                        IDC news and official updates will appear here.
+                        IDC news and official announcements will
+                        be added here.
                     </p>
                 </div>
             </details>
@@ -400,11 +435,10 @@
     </div>
 
 
-    <div class="important">
-        <strong>ℹ️ Information:</strong><br>
-        Fiji Football Hub aims to provide accurate Fiji football
-        information. Fixtures, results, tables and lineups should be
-        updated using officially confirmed information.
+    <div class="info-box">
+        <strong>ℹ️ Fiji Football Hub:</strong><br>
+        Competition information should be updated whenever official
+        fixtures, results, standings or announcements are released.
     </div>
 
 </div>
@@ -416,4 +450,4 @@
 </footer>
 
 </body>
-  </html>
+    </html>
