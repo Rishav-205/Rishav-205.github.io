@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Teams - Fiji Football</title>
+    <title>Teams | Fiji Football Hub</title>
 
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         body {
-            background: #f2f2f2;
-            color: #222;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #111;
         }
 
         header {
-            background: #0057b8;
+            background: #0b1f4b;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px 15px;
         }
 
         header h1 {
-            font-size: 28px;
+            font-size: 30px;
+            margin-bottom: 6px;
         }
 
         header p {
-            margin-top: 5px;
+            font-size: 14px;
+            opacity: 0.9;
         }
 
         nav {
-            background: #003b7a;
+            background: #06152f;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -44,155 +46,340 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 14px 18px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            background: #0077ff;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 25px 15px;
-        }
-
-        .title {
-            text-align: center;
-            color: #0057b8;
-            margin-bottom: 20px;
-        }
-
-        .teams {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
-
-        .team {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .team-icon {
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
-
-        .team h3 {
-            color: #0057b8;
-            margin-bottom: 8px;
-        }
-
-        .team p {
-            color: #666;
+            padding: 13px 15px;
             font-size: 14px;
         }
 
+        nav a:hover {
+            background: #173a78;
+        }
+
+        .container {
+            width: 94%;
+            max-width: 1100px;
+            margin: 25px auto;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #0b1f4b;
+        }
+
+        .intro {
+            text-align: center;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 5px solid #0b1f4b;
+        }
+
+        .team-card h2 {
+            color: #0b1f4b;
+            margin-bottom: 5px;
+        }
+
+        .team-location {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .competition {
+            display: inline-block;
+            background: #e9eef8;
+            color: #0b1f4b;
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        details {
+            border-top: 1px solid #ddd;
+            padding-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #0b1f4b;
+        }
+
+        .squad {
+            margin-top: 12px;
+        }
+
+        .player {
+            background: #f4f6f8;
+            padding: 9px;
+            margin: 6px 0;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        .player span {
+            color: #666;
+        }
+
+        .coming {
+            color: #777;
+            font-style: italic;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
         footer {
-            margin-top: 30px;
-            background: #003b7a;
+            margin-top: 35px;
+            background: #06152f;
             color: white;
             text-align: center;
             padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                padding: 11px 9px;
+                font-size: 13px;
+            }
+
+            .teams-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>🇫🇯 FIJI FOOTBALL</h1>
-        <p>Fiji Football Teams</p>
-    </header>
+<header>
+    <h1>🇫🇯 Fiji Football Hub</h1>
+    <p>Teams • Players • Fixtures • Results • News</p>
+</header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="fixtures.html">Fixtures</a>
-        <a href="teams.html">Teams</a>
-        <a href="results.html">Results</a>
-        <a href="table.html">Table</a>
-        <a href="news.html">News</a>
-    </nav>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="fixtures.html">Fixtures</a>
+    <a href="teams.html">Teams</a>
+    <a href="results.html">Results</a>
+    <a href="tables.html">Tables</a>
+    <a href="news.html">News</a>
+</nav>
 
-    <div class="container">
+<div class="container">
 
-        <h2 class="title">⚽ Fiji Football Teams</h2>
+    <h1 class="page-title">⚽ Fiji Football Teams</h1>
 
-        <div class="teams">
+    <p class="intro">
+        2026 Extra Premier League teams and squad information.
+    </p>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Ba FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+    <div class="teams-grid">
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Labasa FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+        <!-- BA -->
+        <div class="team-card">
+            <h2>🖤 Ba FC</h2>
+            <p class="team-location">Ba</p>
+            <span class="competition">Extra Premier League 2026</span>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Lautoka FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+            <details>
+                <summary>View Squad</summary>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Nadi FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Navua FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+        <!-- LABASA -->
+        <div class="team-card">
+            <h2>🦁 Labasa FC</h2>
+            <p class="team-location">Labasa</p>
+            <span class="competition">Extra Premier League 2026</span>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Rewa FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+            <details>
+                <summary>View Squad</summary>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Suva FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Tailevu Naitasiri FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+        <!-- LAUTOKA -->
+        <div class="team-card">
+            <h2>🔵 Lautoka FC</h2>
+            <p class="team-location">Lautoka</p>
+            <span class="competition">Extra Premier League 2026</span>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Nasinu FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+            <details>
+                <summary>View Squad</summary>
 
-            <div class="team">
-                <div class="team-icon">⚽</div>
-                <h3>Nadroga FC</h3>
-                <p>Fiji Football Club</p>
-            </div>
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
 
+        <!-- NADI -->
+        <div class="team-card">
+            <h2>⚽ Nadi FC</h2>
+            <p class="team-location">Nadi</p>
+            <span class="competition">Extra Premier League 2026</span>
+
+            <details>
+                <summary>View Squad</summary>
+
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
+
+        <!-- NADROGA -->
+        <div class="team-card">
+            <h2>🟢 Nadroga FC</h2>
+            <p class="team-location">Nadroga</p>
+            <span class="competition">Extra Premier League 2026</span>
+
+            <details>
+                <summary>View Squad</summary>
+
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
+
+        <!-- NASINU -->
+        <div class="team-card">
+            <h2>🔴 Nasinu FC</h2>
+            <p class="team-location">Nasinu</p>
+            <span class="competition">Extra Premier League 2026</span>
+
+            <details>
+                <summary>View Squad</summary>
+
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
+
+        <!-- NAVUA -->
+        <div class="team-card">
+            <h2>🟡 Navua FC</h2>
+            <p class="team-location">Navua</p>
+            <span class="competition">Extra Premier League 2026</span>
+
+            <details>
+                <summary>View Squad</summary>
+
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
+
+        <!-- REWA -->
+        <div class="team-card">
+            <h2>🐯 Rewa FC</h2>
+            <p class="team-location">Rewa</p>
+            <span class="competition">Extra Premier League 2026</span>
+
+            <details>
+                <summary>View Squad</summary>
+
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
+
+        <!-- SUVA -->
+        <div class="team-card">
+            <h2>🔵 Suva FC</h2>
+            <p class="team-location">Suva</p>
+            <span class="competition">Extra Premier League 2026</span>
+
+            <details>
+                <summary>View Squad</summary>
+
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
+        </div>
+
+        <!-- TAILEVU NAITASIRI -->
+        <div class="team-card">
+            <h2>⚫ Tailevu Naitasiri FC</h2>
+            <p class="team-location">Tailevu Naitasiri</p>
+            <span class="competition">Extra Premier League 2026</span>
+
+            <details>
+                <summary>View Squad</summary>
+
+                <div class="squad">
+                    <p class="coming">
+                        Player information will be added here after
+                        official squad information is verified.
+                    </p>
+                </div>
+            </details>
         </div>
 
     </div>
+</div>
 
-    <footer>
-        <p>🇫🇯 Fiji Football</p>
-        <p>© 2026 Fiji Football</p>
-    </footer>
+<footer>
+    <p>© 2026 Fiji Football Hub 🇫🇯⚽</p>
+    <p>Independent Fiji football information website</p>
+</footer>
 
 </body>
-</html>
+    </html>
