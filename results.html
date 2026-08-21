@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Results - Fiji Football</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Results | Fiji Football Hub</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         body {
-            background: #f2f2f2;
-            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef2f7;
+            color: #111827;
         }
 
+        /* ================= HEADER ================= */
+
         header {
-            background: #0057b8;
+            background: linear-gradient(135deg, #06152f, #1255a0);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 28px 15px;
         }
 
         header h1 {
-            font-size: 28px;
+            font-size: 30px;
+            margin-bottom: 6px;
         }
 
         header p {
-            margin-top: 5px;
+            font-size: 14px;
+            opacity: 0.9;
         }
 
+        /* ================= NAV ================= */
+
         nav {
-            background: #003b7a;
+            background: #020b1c;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -44,115 +55,962 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 14px 18px;
-            font-weight: bold;
+            padding: 13px 12px;
+            font-size: 13px;
         }
 
         nav a:hover {
-            background: #0077ff;
+            background: #1255a0;
         }
+
+        /* ================= MAIN ================= */
 
         .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 25px 15px;
+            width: 94%;
+            max-width: 1050px;
+            margin: 28px auto;
         }
 
-        .title {
+        .page-heading {
             text-align: center;
-            color: #0057b8;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .result {
-            background: white;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        .page-heading h2 {
+            color: #06152f;
+            font-size: 30px;
+            margin-bottom: 7px;
         }
 
-        .date {
-            color: #0057b8;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .teams {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .score {
-            font-size: 26px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .venue {
-            color: #777;
+        .page-heading p {
+            color: #64748b;
             font-size: 14px;
         }
 
+        /* ================= COMPETITION HEADER ================= */
+
+        .competition-header {
+            background: linear-gradient(135deg, #06152f, #1255a0);
+            color: white;
+            border-radius: 17px;
+            padding: 22px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .competition-header h3 {
+            font-size: 24px;
+            margin-bottom: 7px;
+        }
+
+        .competition-header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .completed {
+            display: inline-block;
+            margin-top: 12px;
+            background: white;
+            color: #08752e;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* ================= ROUND ================= */
+
+        .round {
+            margin-bottom: 30px;
+        }
+
+        .round-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 13px;
+        }
+
+        .round-title h3 {
+            color: #06152f;
+            font-size: 21px;
+        }
+
+        .round-title span {
+            background: #dceaff;
+            color: #1255a0;
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        /* ================= MATCH CARD ================= */
+
+        .match-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 13px;
+            padding: 17px;
+            box-shadow: 0 4px 13px rgba(0,0,0,0.07);
+            border: 1px solid #e2e8f0;
+        }
+
+        .match-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .status {
+            color: #08752e;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .match-date {
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        .match-teams {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .team {
+            width: 40%;
+            font-size: 15px;
+            font-weight: bold;
+            color: #111827;
+        }
+
+        .score {
+            min-width: 70px;
+            font-size: 25px;
+            font-weight: bold;
+            color: #06152f;
+        }
+
+        .venue {
+            text-align: center;
+            margin-top: 12px;
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        /* ================= KNOCKOUT ================= */
+
+        .knockout .match-card {
+            border-left: 5px solid #1255a0;
+        }
+
+        .semi-label {
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        /* ================= FINAL ================= */
+
+        .final-section {
+            background: white;
+            border-radius: 18px;
+            padding: 22px;
+            margin-top: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.09);
+            border-top: 6px solid #d4a017;
+        }
+
+        .final-heading {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .final-heading h3 {
+            color: #806000;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .final-heading p {
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .final-score {
+            background: #fff8df;
+            border-radius: 14px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .final-teams {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .final-team {
+            width: 38%;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .final-number {
+            font-size: 31px;
+            font-weight: bold;
+            color: #06152f;
+        }
+
+        .penalties {
+            margin-top: 13px;
+            color: #805f00;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .champion {
+            margin-top: 20px;
+            text-align: center;
+            background: #06152f;
+            color: white;
+            border-radius: 12px;
+            padding: 17px;
+        }
+
+        .champion small {
+            display: block;
+            opacity: 0.8;
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+
+        .champion strong {
+            font-size: 21px;
+        }
+
+        /* ================= SUMMARY ================= */
+
+        .summary-box {
+            background: #eaf3ff;
+            border-left: 5px solid #1255a0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 25px;
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* ================= FOOTER ================= */
+
         footer {
-            margin-top: 30px;
-            background: #003b7a;
+            background: #020b1c;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px 15px;
+            margin-top: 40px;
         }
+
+        footer p {
+            font-size: 13px;
+            margin: 4px;
+            opacity: 0.85;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 11px 8px;
+            }
+
+            .page-heading h2 {
+                font-size: 25px;
+            }
+
+            .competition-header h3 {
+                font-size: 21px;
+            }
+
+            .round-title h3 {
+                font-size: 18px;
+            }
+
+            .team {
+                font-size: 13px;
+            }
+
+            .score {
+                font-size: 22px;
+            }
+
+            .final-team {
+                font-size: 14px;
+            }
+
+            .final-number {
+                font-size: 25px;
+            }
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <header>
-        <h1>🇫🇯 FIJI FOOTBALL</h1>
-        <p>Match Results</p>
-    </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="fixtures.html">Fixtures</a>
-        <a href="teams.html">Teams</a>
-        <a href="results.html">Results</a>
-        <a href="table.html">Table</a>
-        <a href="news.html">News</a>
-    </nav>
+<!-- ================= HEADER ================= -->
 
-    <div class="container">
+<header>
 
-        <h2 class="title">📊 Latest Results</h2>
+    <h1>🇫🇯 Fiji Football Hub</h1>
 
-        <div class="result">
-            <div class="date">Recent Match</div>
-            <div class="teams">Ba FC vs Labasa FC</div>
-            <div class="score">2 - 1</div>
-            <div class="venue">📍 Fiji</div>
+    <p>
+        Results • Fixtures • Teams • Tables • News
+    </p>
+
+</header>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="fixtures.html">Fixtures</a>
+
+    <a href="teams.html">Teams</a>
+
+    <a href="results.html">Results</a>
+
+    <a href="tables.html">Tables</a>
+
+    <a href="news.html">News</a>
+
+    <a href="competitions.html">Competitions</a>
+
+</nav>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+    <div class="page-heading">
+
+        <h2>⚽ Match Results</h2>
+
+        <p>
+            Completed Fiji football matches
+        </p>
+
+    </div>
+
+
+    <!-- ================= FIJI FACT ================= -->
+
+    <div class="competition-header">
+
+        <h3>🏆 BIC Fiji FACT 2026</h3>
+
+        <p>
+            Complete tournament results
+        </p>
+
+        <span class="completed">
+            ✅ TOURNAMENT COMPLETED
+        </span>
+
+    </div>
+
+
+    <!-- ================= GROUP A ================= -->
+
+    <div class="round">
+
+        <div class="round-title">
+
+            <h3>Group A</h3>
+
+            <span>6 MATCHES</span>
+
         </div>
 
-        <div class="result">
-            <div class="date">Recent Match</div>
-            <div class="teams">Suva FC vs Rewa FC</div>
-            <div class="score">1 - 1</div>
-            <div class="venue">📍 Fiji</div>
+
+        <!-- MATCH 1 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    19 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Rewa FC
+                </div>
+
+                <div class="score">
+                    2–1
+                </div>
+
+                <div class="team">
+                    Navua FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 1
+            </div>
+
         </div>
 
-        <div class="result">
-            <div class="date">Recent Match</div>
-            <div class="teams">Lautoka FC vs Nadi FC</div>
-            <div class="score">3 - 0</div>
-            <div class="venue">📍 Fiji</div>
+
+        <!-- MATCH 2 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    19 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Labasa FC
+                </div>
+
+                <div class="score">
+                    1–1
+                </div>
+
+                <div class="team">
+                    Suva FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 1
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 3 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    20 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Rewa FC
+                </div>
+
+                <div class="score">
+                    1–1
+                </div>
+
+                <div class="team">
+                    Suva FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 2
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 4 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    20 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Navua FC
+                </div>
+
+                <div class="score">
+                    0–0
+                </div>
+
+                <div class="team">
+                    Labasa FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 2
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 5 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    21 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Suva FC
+                </div>
+
+                <div class="score">
+                    0–2
+                </div>
+
+                <div class="team">
+                    Navua FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 3
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 6 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    21 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Labasa FC
+                </div>
+
+                <div class="score">
+                    4–2
+                </div>
+
+                <div class="team">
+                    Rewa FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 3
+            </div>
+
         </div>
 
     </div>
 
-    <footer>
-        <p>🇫🇯 Fiji Football</p>
-        <p>© 2026 Fiji Football</p>
-    </footer>
 
-</body>
-</html>
+    <!-- ================= GROUP B ================= -->
+
+    <div class="round">
+
+        <div class="round-title">
+
+            <h3>Group B</h3>
+
+            <span>6 MATCHES</span>
+
+        </div>
+
+
+        <!-- MATCH 7 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    19 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Lautoka FC
+                </div>
+
+                <div class="score">
+                    4–1
+                </div>
+
+                <div class="team">
+                    Nasinu FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 1
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 8 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    19 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Ba FC
+                </div>
+
+                <div class="score">
+                    4–1
+                </div>
+
+                <div class="team">
+                    Nadroga FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 1
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 9 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    20 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Nadroga FC
+                </div>
+
+                <div class="score">
+                    4–0
+                </div>
+
+                <div class="team">
+                    Nasinu FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 2
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 10 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    20 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Ba FC
+                </div>
+
+                <div class="score">
+                    0–2
+                </div>
+
+                <div class="team">
+                    Lautoka FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 2
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 11 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    21 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Nasinu FC
+                </div>
+
+                <div class="score">
+                    0–6
+                </div>
+
+                <div class="team">
+                    Ba FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 3
+            </div>
+
+        </div>
+
+
+        <!-- MATCH 12 -->
+
+        <div class="match-card">
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME
+                </span>
+
+                <span class="match-date">
+                    21 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Lautoka FC
+                </div>
+
+                <div class="score">
+                    2–0
+                </div>
+
+                <div class="team">
+                    Nadroga FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park • Match Day 3
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SEMI FINALS ================= -->
+
+    <div class="round knockout">
+
+        <div class="round-title">
+
+            <h3>🔥 Semi-Finals</h3>
+
+            <span>27 JUNE</span>
+
+        </div>
+
+
+        <!-- SEMI 1 -->
+
+        <div class="match-card">
+
+            <div class="semi-label">
+                SEMI-FINAL 1
+            </div>
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME • EXTRA TIME
+                </span>
+
+                <span class="match-date">
+                    27 June 2026
+                </span>
+
+            </div>
+
+            <div class="match-teams">
+
+                <div class="team">
+                    Labasa FC
+                </div>
+
+                <div class="score">
+                    0–1
+                </div>
+
+                <div class="team">
+                    Ba FC
+                </div>
+
+            </div>
+
+            <div class="venue">
+                📍 Subrail Park
+            </div>
+
+        </div>
+
+
+        <!-- SEMI 2 -->
+
+        <div class="match-card">
+
+            <div class="semi-label">
+                SEMI-FINAL 2
+            </div>
+
+            <div class="match-top">
+
+                <span class="status">
+                    🟢 FULL TIME • EXTRA TIME
+                </span>
+
+                <span class="match-date">
+    
