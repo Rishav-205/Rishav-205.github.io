@@ -8,27 +8,29 @@
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #111;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef2f7;
+            color: #111827;
         }
 
+        /* HEADER */
+
         header {
-            background: #0b1f4b;
+            background: linear-gradient(135deg, #06152f, #123d82);
             color: white;
+            padding: 28px 15px;
             text-align: center;
-            padding: 25px 15px;
         }
 
         header h1 {
             font-size: 30px;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
         }
 
         header p {
@@ -36,8 +38,10 @@
             opacity: 0.9;
         }
 
+        /* NAVIGATION */
+
         nav {
-            background: #06152f;
+            background: #020b1c;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -46,165 +50,308 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 13px 14px;
-            font-size: 14px;
+            padding: 13px 12px;
+            font-size: 13px;
         }
 
         nav a:hover {
-            background: #173a78;
+            background: #123d82;
         }
+
+        /* MAIN */
 
         .container {
             width: 94%;
             max-width: 1100px;
-            margin: 25px auto;
+            margin: 28px auto;
         }
 
-        .page-title {
+        .page-heading {
             text-align: center;
-            color: #0b1f4b;
+            margin-bottom: 28px;
+        }
+
+        .page-heading h2 {
+            font-size: 30px;
+            color: #06152f;
             margin-bottom: 8px;
         }
 
-        .intro {
-            text-align: center;
-            color: #555;
-            margin-bottom: 25px;
-            line-height: 1.5;
+        .page-heading p {
+            color: #64748b;
+            font-size: 14px;
         }
 
-        .competition-card {
+        /* COMPETITION CARD */
+
+        .competition {
             background: white;
-            border-radius: 15px;
-            margin-bottom: 25px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            box-shadow: 0 7px 20px rgba(0,0,0,0.08);
         }
 
-        .competition-header {
-            background: #0b1f4b;
+        .competition-top {
+            padding: 25px;
             color: white;
-            padding: 22px;
+            background: linear-gradient(135deg, #06152f, #1455a3);
         }
 
-        .competition-header h2 {
-            font-size: 24px;
+        .competition-top h3 {
+            font-size: 25px;
             margin-bottom: 6px;
         }
 
-        .competition-header p {
-            font-size: 14px;
+        .competition-top p {
+            font-size: 13px;
             opacity: 0.9;
         }
 
-        .status {
+        .badge {
             display: inline-block;
-            margin-top: 12px;
-            padding: 6px 11px;
+            margin-top: 14px;
+            padding: 6px 12px;
             border-radius: 20px;
+            background: white;
+            color: #06152f;
             font-size: 12px;
             font-weight: bold;
-            background: white;
-            color: #0b1f4b;
         }
 
-        .competition-content {
-            padding: 20px;
+        /* CONTENT */
+
+        .competition-body {
+            padding: 22px;
         }
 
-        .competition-description {
-            color: #555;
+        .summary {
+            color: #475569;
             line-height: 1.6;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* CHAMPION BOX */
+
+        .champion-box {
+            background: #fff8df;
+            border: 1px solid #f1d77a;
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+
+        .champion-box h4 {
+            color: #805b00;
+            margin-bottom: 10px;
         }
 
         .champion {
-            background: #fff7df;
-            border-left: 5px solid #d49b00;
-            padding: 15px;
-            border-radius: 7px;
-            margin-bottom: 18px;
-            line-height: 1.6;
-        }
-
-        .match {
-            background: #f4f6f8;
-            padding: 14px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            text-align: center;
+            font-size: 21px;
             font-weight: bold;
+            margin-bottom: 5px;
         }
 
-        .date {
-            display: block;
-            font-size: 12px;
-            color: #777;
-            margin-top: 5px;
-            font-weight: normal;
-        }
-
-        details {
-            border-top: 1px solid #ddd;
-            padding: 14px 0;
-        }
-
-        details:first-of-type {
-            border-top: none;
-        }
-
-        summary {
-            cursor: pointer;
-            font-weight: bold;
-            color: #0b1f4b;
-            font-size: 16px;
-        }
-
-        .section-content {
-            margin-top: 12px;
-            background: #f4f6f8;
-            padding: 14px;
-            border-radius: 8px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .coming-soon {
-            font-style: italic;
-            color: #777;
-        }
-
-        .info-box {
-            background: #eef4ff;
-            border-left: 4px solid #0b1f4b;
-            padding: 13px;
-            margin-top: 20px;
-            border-radius: 6px;
-            line-height: 1.5;
+        .final-score {
+            color: #475569;
             font-size: 14px;
         }
 
-        footer {
-            margin-top: 35px;
+        /* MATCH */
+
+        .match-card {
+            background: #f8fafc;
+            border-radius: 13px;
+            padding: 17px;
+            margin-bottom: 18px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .match-label {
+            text-align: center;
+            font-size: 11px;
+            color: #64748b;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .teams {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            text-align: center;
+        }
+
+        .team {
+            width: 38%;
+            font-weight: bold;
+        }
+
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #06152f;
+        }
+
+        .match-date {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* INFO GRID */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .info-box strong {
+            display: block;
+            font-size: 20px;
+            color: #06152f;
+            margin-bottom: 5px;
+        }
+
+        .info-box span {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            flex: 1;
+            min-width: 110px;
+            text-align: center;
+            text-decoration: none;
             background: #06152f;
             color: white;
-            text-align: center;
-            padding: 20px;
+            padding: 11px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .buttons a:hover {
+            background: #1455a3;
+        }
+
+        /* UPCOMING */
+
+        .upcoming-box {
+            background: #eef6ff;
+            border-left: 5px solid #1455a3;
+            padding: 16px;
+            border-radius: 9px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .upcoming-box strong {
+            color: #06152f;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 15px;
+            padding: 13px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .timeline-date {
+            min-width: 90px;
+            font-weight: bold;
+            color: #06152f;
             font-size: 13px;
         }
 
-        @media (max-width: 600px) {
+        .timeline-text {
+            color: #475569;
+            font-size: 13px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020b1c;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 13px;
+            margin: 4px;
+            opacity: 0.85;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+
             header h1 {
                 font-size: 25px;
             }
 
             nav a {
+                font-size: 12px;
                 padding: 11px 8px;
+            }
+
+            .page-heading h2 {
+                font-size: 25px;
+            }
+
+            .competition-top h3 {
+                font-size: 21px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .teams {
+                gap: 8px;
+            }
+
+            .team {
+                width: 42%;
                 font-size: 13px;
             }
 
-            .competition-header h2 {
+            .score {
                 font-size: 21px;
+            }
+
+            .buttons a {
+                min-width: 45%;
             }
         }
     </style>
@@ -212,10 +359,15 @@
 
 <body>
 
+<!-- HEADER -->
+
 <header>
     <h1>🇫🇯 Fiji Football Hub</h1>
-    <p>Competitions • Fixtures • Results • Tables • News</p>
+    <p>Fiji Football • Competitions • Results • Fixtures</p>
 </header>
+
+
+<!-- NAVIGATION -->
 
 <nav>
     <a href="index.html">Home</a>
@@ -227,226 +379,330 @@
     <a href="competitions.html">Competitions</a>
 </nav>
 
+
+<!-- MAIN -->
+
 <div class="container">
 
-    <h1 class="page-title">🏆 Fiji Football Competitions</h1>
-
-    <p class="intro">
-        Follow major Fiji football competitions, their results,
-        fixtures, standings and latest updates.
-    </p>
+    <div class="page-heading">
+        <h2>🏆 Competitions</h2>
+        <p>Follow Fiji's biggest football tournaments</p>
+    </div>
 
 
-    <!-- FIJI FACT 2026 -->
+    <!-- ========================= -->
+    <!-- FIJI FACT -->
+    <!-- ========================= -->
 
-    <div class="competition-card">
+    <div class="competition">
 
-        <div class="competition-header">
-            <h2>🏆 BiC Fiji FACT 2026</h2>
+        <div class="competition-top">
+            <h3>🏆 BIC Fiji FACT 2026</h3>
             <p>Fiji Association Cup Tournament</p>
-            <span class="status">✅ COMPLETED</span>
+            <span class="badge">✅ COMPLETED</span>
         </div>
 
-        <div class="competition-content">
+        <div class="competition-body">
 
-            <p class="competition-description">
-                The 2026 BiC Fiji FACT has been completed at
-                Subrail Park in Labasa.
+            <p class="summary">
+                The 2026 BIC Fiji FACT has been completed,
+                with Ba claiming the championship after defeating
+                Navua in the final.
             </p>
 
-            <div class="champion">
-                🥇 <strong>Champions: Ba FC</strong><br>
-                🥈 Runners-up: Navua FC<br>
-                🏆 Final: Ba 0–0 Navua<br>
-                ⚽ Penalty shootout: Ba won 3–1
+
+            <!-- CHAMPION -->
+
+            <div class="champion-box">
+
+                <h4>🏆 CHAMPIONS</h4>
+
+                <div class="champion">
+                    🥇 Ba FC
+                </div>
+
+                <div class="final-score">
+                    Runners-up: Navua FC
+                </div>
+
             </div>
 
-            <details>
-                <summary>⚽ Final Result</summary>
 
-                <div class="section-content">
+            <!-- FINAL -->
 
-                    <div class="match">
-                        Ba FC 0–0 Navua FC
-                        <span class="date">
-                            Final — 28 June 2026
-                        </span>
+            <div class="match-card">
+
+                <div class="match-label">
+                    FIJI FACT FINAL
+                </div>
+
+                <div class="teams">
+
+                    <div class="team">
+                        Ba FC
                     </div>
 
-                    <div class="match">
-                        Ba FC won 3–1 on penalties
+                    <div class="score">
+                        0–0
+                    </div>
+
+                    <div class="team">
+                        Navua FC
                     </div>
 
                 </div>
-            </details>
 
-            <details>
-                <summary>📊 Tournament Information</summary>
-
-                <div class="section-content">
-                    <p>
-                        Ba completed the tournament as champions,
-                        while Navua finished as runners-up.
-                    </p>
+                <div class="match-date">
+                    28 June 2026 • Ba won 3–1 on penalties
                 </div>
-            </details>
 
-            <details>
-                <summary>📰 Fiji FACT News</summary>
+            </div>
 
-                <div class="section-content">
-                    <p>
-                        Ba ended a 16-year wait for the Fiji FACT
-                        title with their victory over Navua.
-                    </p>
+
+            <!-- INFORMATION -->
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>🥇</strong>
+                    <span>Champion<br>Ba FC</span>
                 </div>
-            </details>
+
+                <div class="info-box">
+                    <strong>🥈</strong>
+                    <span>Runner-up<br>Navua FC</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>2026</strong>
+                    <span>Edition</span>
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+                <a href="results.html">Results</a>
+                <a href="news.html">News</a>
+                <a href="teams.html">Teams</a>
+            </div>
 
         </div>
+
     </div>
 
 
-    <!-- BOG 2026 -->
+    <!-- ========================= -->
+    <!-- BOG -->
+    <!-- ========================= -->
 
-    <div class="competition-card">
+    <div class="competition">
 
-        <div class="competition-header">
-            <h2>👑 Battle of the Giants 2026</h2>
+        <div class="competition-top">
+            <h3>👑 Battle of the Giants 2026</h3>
             <p>BOG</p>
-            <span class="status">🟡 UPCOMING</span>
+            <span class="badge">🟡 UPCOMING</span>
         </div>
 
-        <div class="competition-content">
+        <div class="competition-body">
 
-            <p class="competition-description">
-                The 2026 Battle of the Giants is scheduled to take
-                place later in the 2026 season.
+            <p class="summary">
+                The Battle of the Giants is one of Fiji's major
+                football tournaments. The 2026 edition is scheduled
+                for later in the season.
             </p>
 
-            <details>
-                <summary>📅 Tournament Dates</summary>
 
-                <div class="section-content">
-                    <p>
-                        Pool matches are scheduled for September 2026,
-                        followed by the knockout stages.
-                    </p>
+            <div class="upcoming-box">
+
+                <strong>📅 September 2026</strong><br>
+
+                Pool matches are scheduled for September,
+                followed by the knockout stages.
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>📅</strong>
+                    <span>Pool Stage<br>September</span>
                 </div>
-            </details>
 
-            <details>
-                <summary>⚽ Fixtures</summary>
-
-                <div class="section-content">
-                    <p class="coming-soon">
-                        Official fixtures will be added and updated
-                        here as they are confirmed.
-                    </p>
+                <div class="info-box">
+                    <strong>⚽</strong>
+                    <span>Knockout<br>Stage</span>
                 </div>
-            </details>
 
-            <details>
-                <summary>📊 Standings</summary>
-
-                <div class="section-content">
-                    <p class="coming-soon">
-                        BOG pool standings will appear here once
-                        matches begin.
-                    </p>
+                <div class="info-box">
+                    <strong>🏆</strong>
+                    <span>Final<br>2026</span>
                 </div>
-            </details>
 
-            <details>
-                <summary>📰 News & Updates</summary>
+            </div>
 
-                <div class="section-content">
-                    <p class="coming-soon">
-                        Latest BOG updates will be added here.
-                    </p>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        September
+                    </div>
+
+                    <div class="timeline-text">
+                        BOG pool matches
+                    </div>
+
                 </div>
-            </details>
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        Later
+                    </div>
+
+                    <div class="timeline-text">
+                        Semifinals and final
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <a href="fixtures.html">Fixtures</a>
+                <a href="teams.html">Teams</a>
+                <a href="news.html">News</a>
+
+            </div>
 
         </div>
+
     </div>
 
 
-    <!-- IDC 2026 -->
+    <!-- ========================= -->
+    <!-- IDC -->
+    <!-- ========================= -->
 
-    <div class="competition-card">
+    <div class="competition">
 
-        <div class="competition-header">
-            <h2>🏝️ Inter-District Championship 2026</h2>
+        <div class="competition-top">
+            <h3>🏝️ Inter-District Championship 2026</h3>
             <p>FMF IDC</p>
-            <span class="status">🟡 UPCOMING</span>
+            <span class="badge">🟡 UPCOMING</span>
         </div>
 
-        <div class="competition-content">
+        <div class="competition-body">
 
-            <p class="competition-description">
-                The 2026 Inter-District Championship is scheduled
-                for October 2026.
+            <p class="summary">
+                The Inter-District Championship brings Fiji's
+                football districts together for one of the country's
+                biggest football tournaments.
             </p>
 
-            <details>
-                <summary>📅 Tournament Dates</summary>
 
-                <div class="section-content">
-                    <p>
-                        The 2026 IDC is scheduled for
-                        <strong>6–11 October 2026</strong>.
-                    </p>
+            <div class="upcoming-box">
+
+                <strong>📅 6–11 October 2026</strong><br>
+
+                The 2026 IDC is scheduled to take place during
+                October.
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>📅</strong>
+                    <span>6 October<br>Start</span>
                 </div>
-            </details>
 
-            <details>
-                <summary>⚽ Fixtures</summary>
-
-                <div class="section-content">
-                    <p class="coming-soon">
-                        Official IDC fixtures will be added here
-                        once confirmed.
-                    </p>
+                <div class="info-box">
+                    <strong>⚽</strong>
+                    <span>District<br>Football</span>
                 </div>
-            </details>
 
-            <details>
-                <summary>📊 Standings</summary>
-
-                <div class="section-content">
-                    <p class="coming-soon">
-                        IDC standings will appear here when the
-                        competition begins.
-                    </p>
+                <div class="info-box">
+                    <strong>🏆</strong>
+                    <span>11 October<br>Final</span>
                 </div>
-            </details>
 
-            <details>
-                <summary>📰 News & Updates</summary>
+            </div>
 
-                <div class="section-content">
-                    <p class="coming-soon">
-                        IDC news and official announcements will
-                        be added here.
-                    </p>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        6 Oct
+                    </div>
+
+                    <div class="timeline-text">
+                        IDC tournament begins
+                    </div>
+
                 </div>
-            </details>
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        11 Oct
+                    </div>
+
+                    <div class="timeline-text">
+                        IDC final
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <a href="fixtures.html">Fixtures</a>
+                <a href="teams.html">Districts</a>
+                <a href="news.html">News</a>
+
+            </div>
 
         </div>
+
     </div>
 
 
-    <div class="info-box">
-        <strong>ℹ️ Fiji Football Hub:</strong><br>
-        Competition information should be updated whenever official
-        fixtures, results, standings or announcements are released.
+    <!-- FOOTNOTE -->
+
+    <div class="upcoming-box">
+
+        <strong>ℹ️ Fiji Football Hub</strong><br>
+
+        Competition information will be updated as official
+        fixtures, results, standings and announcements become
+        available.
+
     </div>
 
 </div>
 
 
+<!-- FOOTER -->
+
 <footer>
-    <p>© 2026 Fiji Football Hub 🇫🇯⚽</p>
-    <p>Independent Fiji football information website</p>
+
+    <p>🇫🇯 © 2026 Fiji Football Hub</p>
+
+    <p>
+        Independent Fiji football information website
+    </p>
+
 </footer>
 
 </body>
