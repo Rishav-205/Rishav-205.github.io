@@ -1,279 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>League Table - Fiji Football</title>
+<title>Extra Premier League Table | Fiji Football Hub</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            background: #f2f2f2;
-            color: #222;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eef2f7;
+    color:#111827;
+}
 
-        header {
-            background: #0057b8;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+header{
+    background:linear-gradient(135deg,#06152f,#1255a0);
+    color:white;
+    text-align:center;
+    padding:28px 15px;
+}
 
-        header h1 {
-            font-size: 28px;
-        }
+header h1{
+    font-size:29px;
+    margin-bottom:7px;
+}
 
-        header p {
-            margin-top: 5px;
-        }
+header p{
+    font-size:13px;
+    opacity:.9;
+}
 
-        nav {
-            background: #003b7a;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+nav{
+    background:#020b1c;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 18px;
-            font-weight: bold;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:13px 11px;
+    font-size:13px;
+}
 
-        nav a:hover {
-            background: #0077ff;
-        }
+nav a:hover{
+    background:#1255a0;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 25px 10px;
-        }
+.container{
+    width:95%;
+    max-width:1100px;
+    margin:28px auto;
+}
 
-        .title {
-            text-align: center;
-            color: #0057b8;
-            margin-bottom: 20px;
-        }
+.heading{
+    text-align:center;
+    margin-bottom:25px;
+}
 
-        .table-box {
-            background: white;
-            border-radius: 12px;
-            overflow-x: auto;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
+.heading h2{
+    color:#06152f;
+    font-size:28px;
+    margin-bottom:7px;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
+.heading p{
+    color:#64748b;
+    font-size:13px;
+}
 
-        th {
-            background: #0057b8;
-            color: white;
-            padding: 13px 8px;
-            text-align: center;
-        }
+.league-box{
+    background:linear-gradient(135deg,#06152f,#1255a0);
+    color:white;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:22px;
+}
 
-        td {
-            padding: 13px 8px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
+.league-box h3{
+    font-size:23px;
+    margin-bottom:6px;
+}
 
-        td:nth-child(2) {
-            text-align: left;
-            font-weight: bold;
-        }
+.league-box p{
+    font-size:13px;
+    opacity:.9;
+}
 
-        tr:hover {
-            background: #f5f5f5;
-        }
+.status{
+    display:inline-block;
+    background:white;
+    color:#08752e;
+    padding:6px 12px;
+    border-radius:20px;
+    margin-top:13px;
+    font-size:11px;
+    font-weight:bold;
+}
 
-        .position {
-            font-weight: bold;
-        }
+.table-card{
+    background:white;
+    border-radius:16px;
+    overflow-x:auto;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
 
-        footer {
-            margin-top: 30px;
-            background: #003b7a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+table{
+    width:100%;
+    min-width:720px;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#06152f;
+    color:white;
+}
+
+th{
+    padding:14px 8px;
+    font-size:11px;
+}
+
+td{
+    padding:15px 8px;
+    text-align:center;
+    border-bottom:1px solid #e5e7eb;
+    font-size:13px;
+}
+
+td.club{
+    text-align:left;
+    font-weight:bold;
+    min-width:190px;
+}
+
+tbody tr:hover{
+    background:#f5f8fc;
+}
+
+.position{
+    font-weight:bold;
+    width:40px;
+}
+
+.top{
+    background:#eef8f1;
+}
+
+.champion{
+    background:#fff8df;
+}
+
+.points{
+    font-weight:bold;
+    font-size:15px;
+    color:#06152f;
+}
+
+.form{
+    font-size:11px;
+    color:#64748b;
+}
+
+.legend{
+    background:white;
+    margin-top:20px;
+    padding:18px;
+    border-radius:13px;
+    box-shadow:0 4px 13px rgba(0,0,0,.06);
+}
+
+.legend h3{
+    margin-bottom:10px;
+    color:#06152f;
+    font-size:16px;
+}
+
+.legend p{
+    font-size:12px;
+    color:#64748b;
+    line-height:1.8;
+}
+
+.note{
+    background:#eaf3ff;
+    border-left:5px solid #1255a0;
+    padding:15px;
+    border-radius:8px;
+    margin-top:20px;
+    font-size:12px;
+    color:#475569;
+    line-height:1.6;
+}
+
+footer{
+    background:#020b1c;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    margin-top:40px;
+}
+
+footer p{
+    font-size:13px;
+    margin:4px;
+    opacity:.85;
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:24px;
+    }
+
+    nav a{
+        font-size:11px;
+        padding:11px 7px;
+    }
+
+    .heading h2{
+        font-size:24px;
+    }
+
+    .league-box h3{
+        font-size:20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>🇫🇯 FIJI FOOTBALL</h1>
-        <p>League Standings</p>
-    </header>
+<header>
+    <h1>🇫🇯 Fiji Football Hub</h1>
+    <p>Fixtures • Results • Teams • Tables • News</p>
+</header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="fixtures.html">Fixtures</a>
-        <a href="teams.html">Teams</a>
-        <a href="results.html">Results</a>
-        <a href="table.html">Table</a>
-        <a href="news.html">News</a>
-    </nav>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="fixtures.html">Fixtures</a>
+    <a href="teams.html">Teams</a>
+    <a href="results.html">Results</a>
+    <a href="tables.html">Tables</a>
+    <a href="news.html">News</a>
+    <a href="competitions.html">Competitions</a>
+</nav>
 
-    <div class="container">
+<div class="container">
 
-        <h2 class="title">🏆 League Table</h2>
+    <div class="heading">
+        <h2>📊 League Table</h2>
+        <p>2026 Extra Premier League</p>
+    </div>
 
-        <div class="table-box">
+    <div class="league-box">
+        <h3>🏆 Extra Premier League 2026</h3>
+        <p>Current standings</p>
 
-            <table>
+        <span class="status">
+            🟢 SEASON IN PROGRESS
+        </span>
+    </div>
 
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Team</th>
-                        <th>MP</th>
-                        <th>W</th>
-                        <th>D</th>
-                        <th>L</th>
-                        <th>GD</th>
-                        <th>Pts</th>
-                    </tr>
-                </thead>
+    <div class="table-card">
 
-                <tbody>
+        <table>
 
-                    <tr>
-                        <td class="position">1</td>
-                        <td>Ba FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>CLUB</th>
+                    <th>P</th>
+                    <th>W</th>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                    <th>PTS</th>
+                </tr>
+            </thead>
 
-                    <tr>
-                        <td class="position">2</td>
-                        <td>Labasa FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+            <tbody>
 
-                    <tr>
-                        <td class="position">3</td>
-                        <td>Lautoka FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                <tr class="champion">
+                    <td class="position">1</td>
+                    <td class="club">🥇 Ba FC</td>
+                    <td>17</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>53</td>
+                    <td>14</td>
+                    <td>+39</td>
+                    <td class="points">39</td>
+                </tr>
 
-                    <tr>
-                        <td class="position">4</td>
-                        <td>Nadi FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                <tr class="top">
+                    <td class="position">2</td>
+                    <td class="club">Labasa FC</td>
+                    <td>17</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>37</td>
+                    <td>20</td>
+                    <td>+17</td>
+                    <td class="points">35</td>
+                </tr>
 
-                    <tr>
-                        <td class="position">5</td>
-                        <td>Navua FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                <tr>
+                    <td class="position">3</td>
+                    <td class="club">Rewa FC</td>
+                    <td>16</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>39</td>
+                    <td>15</td>
+                    <td>+24</td>
+                    <td class="points">32</td>
+                </tr>
 
-                    <tr>
-                        <td class="position">6</td>
-                        <td>Rewa FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                <tr>
+                    <td class="position">4</td>
+                    <td class="club">Lautoka FC</td>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>35</td>
+                    <td>34</td>
+                    <td>+1</td>
+                    <td class="points">23</td>
+                </tr>
 
-                    <tr>
-                        <td class="position">7</td>
-                        <td>Suva FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                <tr>
+                    <td class="position">5</td>
+                    <td class="club">Nadi FC</td>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>24</td>
+                    <td>27</td>
+                    <td>-3</td>
+                    <td class="points">21</td>
+                </tr>
 
-                    <tr>
-                        <td class="position">8</td>
-                        <td>Tailevu Naitasiri FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                <tr>
+                    <td class="position">6</td>
+                    <td class="club">Nasinu FC</td>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>27</td>
+                    <td>40</td>
+                    <td>-13</td>
+                    <td class="points">21</td>
+                </tr>
 
-                    <tr>
-                        <td class="position">9</td>
-                        <td>Nasinu FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                <tr>
+                    <td class="position">7</td>
+                    <td class="club">Suva FC</td>
+                    <td>17</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>31</td>
+                    <td>28</td>
+                    <td>+3</td>
+                    <td class="points">20</td>
+                </tr>
 
-                    <tr>
-                        <td class="position">10</td>
-                        <td>Nadroga FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                <tr>
+                    <td class="position">8</td>
+                    <td class="club">Navua FC</td>
+                    <td>16</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>-1</td>
+                    <td class="points">19</td>
+                </tr>
 
-                </tbody>
+                <tr>
+                    <td class="position">9</td>
+                    <td class="club">Nadroga FC</td>
+                    <td>17</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>10</td>
+                    <td>22</td>
+                    <td>43</td>
+                    <td>-21</td>
+                    <td class="points">13</td>
+                </tr>
 
-            </table>
+                <tr>
+                    <td class="position">10</td>
+                    <td class="club">Tailevu Naitasiri FC</td>
+                    <td>17</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>11</td>
+                    <td>19</td>
+                    <td>65</td>
+                    <td>-46</td>
+                    <td class="points">10</td>
+                </tr>
 
-        </div>
+            </tbody>
+
+        </table>
 
     </div>
 
-    <footer>
-        <p>🇫🇯 Fiji Football</p>
-        <p>© 2026 Fiji Football</p>
-    </footer>
+    <div class="legend">
+
+        <h3>📖 Table Guide</h3>
+
+        <p>
+            <strong>P</strong> = Played &nbsp; • &nbsp;
+            <strong>W</strong> = Won &nbsp; • &nbsp;
+            <strong>D</strong> = Drawn &nbsp; • &nbsp;
+            <strong>L</strong> = Lost
+        </p>
+
+        <p>
+            <strong>GF</strong> = Goals For &nbsp; • &nbsp;
+            <strong>GA</strong> = Goals Against &nbsp; • &nbsp;
+            <strong>GD</strong> = Goal Difference &nbsp; • &nbsp;
+            <strong>PTS</strong> = Points
+        </p>
+
+    </div>
+
+    <div class="note">
+        <strong>ℹ️ Updated standings</strong><br>
+        The table is based on the latest Fiji Football Association
+        competition record available for the 2026 Extra Premier League.
+        Rewa and Navua have played 16 matches, while the other clubs
+        have played 17.
+    </div>
+
+</div>
+
+<footer>
+
+    <p>🇫🇯 © 2026 Fiji Football Hub</p>
+
+    <p>Independent Fiji football information website</p>
+
+</footer>
 
 </body>
-</html>
+    </html>
