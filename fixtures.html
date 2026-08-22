@@ -1,354 +1,754 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fixtures | Fiji Football Hub</title>
+<meta charset="UTF-8">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background: #f2f5f8;
-            color: #222;
-        }
+<title>Fixtures | Fiji Football Hub</title>
 
-        header {
-            background: linear-gradient(135deg, #0057b8, #003b7a);
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+<style>
 
-        header h1 {
-            font-size: 30px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header p {
-            margin-top: 6px;
-            font-size: 14px;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef2f7;
+    color: #111827;
+}
 
-        nav {
-            background: #002b5c;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+/* HEADER */
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 16px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+header {
+    background: linear-gradient(135deg, #06152f, #1255a0);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
 
-        nav a:hover {
-            background: #0057b8;
-        }
+header h1 {
+    font-size: 30px;
+    margin-bottom: 7px;
+}
 
-        .hero {
-            background: linear-gradient(135deg, #0057b8, #00a651);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
 
-        .hero h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+/* NAVIGATION */
 
-        .hero p {
-            font-size: 16px;
-        }
+nav {
+    background: #020b1c;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 15px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 13px 11px;
+    font-size: 13px;
+}
 
-        .competition {
-            text-align: center;
-            color: #0057b8;
-            margin-bottom: 20px;
-        }
+nav a:hover {
+    background: #1255a0;
+}
 
-        .fixture {
-            background: white;
-            margin-bottom: 18px;
-            padding: 22px;
-            border-radius: 14px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            text-align: center;
-        }
+/* MAIN */
 
-        .date {
-            color: #0057b8;
-            font-weight: bold;
-            font-size: 15px;
-            margin-bottom: 10px;
-        }
+.container {
+    width: 94%;
+    max-width: 1050px;
+    margin: 28px auto;
+}
 
-        .teams {
-            font-size: 20px;
-            font-weight: bold;
-            margin: 12px 0;
-        }
+.page-title {
+    text-align: center;
+    margin-bottom: 28px;
+}
 
-        .vs {
-            color: #777;
-            font-size: 14px;
-            margin: 6px 0;
-        }
+.page-title h2 {
+    color: #06152f;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
 
-        .venue {
-            color: #666;
-            font-size: 14px;
-            margin-top: 10px;
-        }
+.page-title p {
+    color: #64748b;
+    font-size: 14px;
+}
 
-        .time {
-            display: inline-block;
-            margin-top: 12px;
-            background: #0057b8;
-            color: white;
-            padding: 7px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-        }
+/* COMPETITION HERO */
 
-        .status {
-            display: inline-block;
-            margin-top: 8px;
-            background: #00a651;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
+.competition-hero {
+    background: linear-gradient(135deg, #06152f, #1255a0);
+    color: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
 
-        .source {
-            background: white;
-            padding: 20px;
-            margin-top: 25px;
-            border-radius: 12px;
-            text-align: center;
-            color: #555;
-            line-height: 1.6;
-        }
+.competition-hero h3 {
+    font-size: 26px;
+    margin-bottom: 7px;
+}
 
-        .source a {
-            color: #0057b8;
-            font-weight: bold;
-        }
+.competition-hero p {
+    font-size: 13px;
+    opacity: 0.9;
+}
 
-        footer {
-            margin-top: 30px;
-            background: #002b5c;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+.live-badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 7px 13px;
+    background: white;
+    color: #06152f;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
 
-        footer p {
-            margin: 5px;
-            font-size: 14px;
-        }
-    </style>
+/* DAY */
+
+.match-day {
+    margin-bottom: 28px;
+}
+
+.day-header {
+    background: #06152f;
+    color: white;
+    padding: 16px 18px;
+    border-radius: 14px 14px 0 0;
+}
+
+.day-header h3 {
+    font-size: 18px;
+}
+
+.day-header p {
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* MATCH LIST */
+
+.matches {
+    background: white;
+    border-radius: 0 0 14px 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.07);
+}
+
+/* MATCH */
+
+.match {
+    display: grid;
+    grid-template-columns: 80px 1fr 55px 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 15px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.time {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1255a0;
+    text-align: center;
+}
+
+.team-left {
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.vs {
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: bold;
+}
+
+.team-right {
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* OPENING */
+
+.opening {
+    background: #fff7df;
+    color: #805f00;
+    font-weight: bold;
+}
+
+/* KNOCKOUT */
+
+.knockout .day-header {
+    background: linear-gradient(135deg, #7b5600, #c79519);
+}
+
+.knockout .match {
+    border-left: 5px solid #c79519;
+}
+
+/* FINAL */
+
+.final-box {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.09);
+    border-top: 6px solid #d4a017;
+}
+
+.final-box h3 {
+    color: #805f00;
+    font-size: 23px;
+    margin-bottom: 7px;
+}
+
+.final-box p {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.final-match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.final-team {
+    width: 35%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.final-vs {
+    font-size: 14px;
+    font-weight: bold;
+    color: #64748b;
+}
+
+/* INFO */
+
+.info {
+    background: #eaf3ff;
+    border-left: 5px solid #1255a0;
+    padding: 16px;
+    border-radius: 9px;
+    margin-top: 28px;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+    background: #020b1c;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 4px;
+    opacity: 0.85;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 11px 8px;
+    }
+
+    .page-title h2 {
+        font-size: 25px;
+    }
+
+    .competition-hero h3 {
+        font-size: 22px;
+    }
+
+    .match {
+        grid-template-columns: 62px 1fr 35px 1fr;
+        gap: 5px;
+        padding: 17px 9px;
+    }
+
+    .time {
+        font-size: 11px;
+    }
+
+    .team-left,
+    .team-right {
+        font-size: 12px;
+    }
+
+    .vs {
+        font-size: 10px;
+    }
+
+    .day-header h3 {
+        font-size: 16px;
+    }
+
+    .final-team {
+        font-size: 13px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <header>
-        <h1>🇫🇯 FIJI FOOTBALL HUB</h1>
-        <p>Your home for football in Fiji</p>
-    </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="fixtures.html">Fixtures</a>
-        <a href="teams.html">Teams</a>
-        <a href="results.html">Results</a>
-        <a href="table.html">Table</a>
-        <a href="news.html">News</a>
-    </nav>
+<!-- HEADER -->
 
-    <section class="hero">
+<header>
+
+    <h1>🇫🇯 Fiji Football Hub</h1>
+
+    <p>
+        Fixtures • Results • Teams • Tables • News
+    </p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="fixtures.html">Fixtures</a>
+
+    <a href="teams.html">Teams</a>
+
+    <a href="results.html">Results</a>
+
+    <a href="tables.html">Tables</a>
+
+    <a href="news.html">News</a>
+
+    <a href="competitions.html">Competitions</a>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+
+    <div class="page-title">
+
         <h2>📅 Fixtures</h2>
-        <p>Current 2026 Fiji football fixtures</p>
-    </section>
 
-    <div class="container">
+        <p>
+            Upcoming Fiji football matches
+        </p>
 
-        <h2 class="competition">
-            🏆 Extra Premier League 2026
-        </h2>
+    </div>
 
-        <!-- FIXTURE 1 -->
-        <div class="fixture">
-            <div class="date">16 August 2026</div>
 
-            <div class="teams">
-                Nasinu FC
-            </div>
+    <!-- COMPETITION -->
 
-            <div class="vs">VS</div>
+    <div class="competition-hero">
 
-            <div class="teams">
-                Navua FC
-            </div>
+        <h3>🏆 Extra BOG 2026</h3>
 
-            <div class="venue">
-                📍 HFC Bank Stadium
-            </div>
+        <p>
+            Battle of the Giants • Official Tournament Fixtures
+        </p>
 
-            <div class="time">
-                🕚 11:00 AM
-            </div>
+        <span class="live-badge">
+            UPCOMING • 4–13 SEPTEMBER 2026
+        </span>
 
-            <div class="status">
-                Fixture
-            </div>
+    </div>
+
+
+    <!-- ================= FRIDAY ================= -->
+
+    <div class="match-day">
+
+        <div class="day-header">
+
+            <h3>Friday, 4 September 2026</h3>
+
+            <p>Match Day 1</p>
+
         </div>
 
-        <!-- FIXTURE 2 -->
-        <div class="fixture">
-            <div class="date">16 August 2026</div>
 
-            <div class="teams">
-                Tailevu Naitasiri FC
+        <div class="matches">
+
+
+            <div class="match">
+
+                <div class="time">1:00 PM</div>
+
+                <div class="team-left">Suva FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Navua FC</div>
+
             </div>
 
-            <div class="vs">VS</div>
 
-            <div class="teams">
-                Labasa FC
+            <div class="match">
+
+                <div class="time">3:00 PM</div>
+
+                <div class="team-left">Labasa FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Nasinu FC</div>
+
             </div>
 
-            <div class="venue">
-                📍 HFC Bank Stadium
+
+            <div class="match">
+
+                <div class="time">5:00 PM</div>
+
+                <div class="team-left">Rewa FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Lautoka FC</div>
+
             </div>
 
-            <div class="time">
-                🕐 1:00 PM
+
+            <div class="match opening">
+
+                <div class="time">7:00 PM</div>
+
+                <div class="team-left">Official</div>
+
+                <div class="vs">OPENING</div>
+
+                <div class="team-right">CEREMONY</div>
+
             </div>
 
-            <div class="status">
-                Fixture
-            </div>
-        </div>
 
-        <!-- FIXTURE 3 -->
-        <div class="fixture">
-            <div class="date">16 August 2026</div>
+            <div class="match">
 
-            <div class="teams">
-                Suva FC
-            </div>
+                <div class="time">7:30 PM</div>
 
-            <div class="vs">VS</div>
+                <div class="team-left">Nadi FC</div>
 
-            <div class="teams">
-                Nadroga FC
+                <div class="vs">VS</div>
+
+                <div class="team-right">Ba FC</div>
+
             </div>
 
-            <div class="venue">
-                📍 HFC Bank Stadium
-            </div>
 
-            <div class="time">
-                🕒 3:00 PM
-            </div>
-
-            <div class="status">
-                Fixture
-            </div>
-        </div>
-
-        <!-- FIXTURE 4 -->
-        <div class="fixture">
-            <div class="date">16 August 2026</div>
-
-            <div class="teams">
-                Lautoka FC
-            </div>
-
-            <div class="vs">VS</div>
-
-            <div class="teams">
-                Nadi FC
-            </div>
-
-            <div class="venue">
-                📍 Churchill Park
-            </div>
-
-            <div class="time">
-                🕒 3:00 PM
-            </div>
-
-            <div class="status">
-                Fixture
-            </div>
-        </div>
-
-        <!-- FIXTURE 5 -->
-        <div class="fixture">
-            <div class="date">20 September 2026</div>
-
-            <div class="teams">
-                Rewa FC
-            </div>
-
-            <div class="vs">VS</div>
-
-            <div class="teams">
-                Ba FC
-            </div>
-
-            <div class="venue">
-                📍 Ratu Cakobau Park
-            </div>
-
-            <div class="time">
-                🕒 3:00 PM
-            </div>
-
-            <div class="status">
-                Upcoming
-            </div>
-        </div>
-
-        <div class="source">
-            <strong>📌 Data source</strong>
-            <p>
-                Fixtures are based on the Fiji Football Association's
-                2026 Extra Premier League competition information.
-            </p>
-
-            <p>
-                <a href="https://www.fijifootball.com.fj/competition-list/extra-premier-league-2026-2729072397/" target="_blank">
-                    View official Fiji FA fixtures
-                </a>
-            </p>
         </div>
 
     </div>
 
-    <footer>
-        <p>🇫🇯 Fiji Football Hub</p>
-        <p>© 2026 Fiji Football Hub</p>
-    </footer>
+
+    <!-- ================= SATURDAY ================= -->
+
+    <div class="match-day">
+
+        <div class="day-header">
+
+            <h3>Saturday, 5 September 2026</h3>
+
+            <p>Match Day 2</p>
+
+        </div>
+
+
+        <div class="matches">
+
+
+            <div class="match">
+
+                <div class="time">11:30 AM</div>
+
+                <div class="team-left">Navua FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Nasinu FC</div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="time">1:30 PM</div>
+
+                <div class="team-left">Lautoka FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Nadi FC</div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="time">3:30 PM</div>
+
+                <div class="team-left">Labasa FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Suva FC</div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="time">5:30 PM</div>
+
+                <div class="team-left">Ba FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Rewa FC</div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SUNDAY ================= -->
+
+    <div class="match-day">
+
+        <div class="day-header">
+
+            <h3>Sunday, 6 September 2026</h3>
+
+            <p>Match Day 3</p>
+
+        </div>
+
+
+        <div class="matches">
+
+
+            <div class="match">
+
+                <div class="time">11:30 AM</div>
+
+                <div class="team-left">Nasinu FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Suva FC</div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="time">1:30 PM</div>
+
+                <div class="team-left">Nadi FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Rewa FC</div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="time">3:30 PM</div>
+
+                <div class="team-left">Navua FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Labasa FC</div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="time">5:30 PM</div>
+
+                <div class="team-left">Ba FC</div>
+
+                <div class="vs">VS</div>
+
+                <div class="team-right">Lautoka FC</div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SEMI FINALS ================= -->
+
+    <div class="match-day knockout">
+
+        <div class="day-header">
+
+            <h3>Saturday, 12 September 2026</h3>
+
+            <p>🔥 Semi-Finals</p>
+
+        </div>
+
+
+        <div class="matches">
+
+
+            <div class="match">
+
+                <div class="time">2:00 PM</div>
+
+                <div class="team-left">To Be Decided</div>
+
+                <div class="vs">SEMI-FINAL 1</div>
+
+                <div class="team-right">To Be Decided</div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="time">4:30 PM</div>
+
+                <div class="team-left">To Be Decided</div>
+
+                <div class="vs">SEMI-FINAL 2</div>
+
+                <div class="team-right">To Be Decided</div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FINAL ================= -->
+
+    <div class="final-box">
+
+        <h3>🏆 GRAND FINAL</h3>
+
+        <p>
+            Sunday, 13 September 2026 • 3:00 PM
+        </p>
+
+
+        <div class="final-match">
+
+            <div class="final-team">
+                To Be Decided 
+            </div>
+
+            <div class="final-vs">
+                VS
+            </div>
+
+            <div class="final-team">
+                To Be Decided 
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INFO -->
+
+    <div class="info">
+
+        <strong>ℹ️ Fixture Updates</strong>
+
+        <br>
+
+        Semi-final and Grand Final teams will be updated
+        once the group stage is completed.
+
+        <br><br>
+
+        Fiji Football Hub will update this page when
+        official fixture changes are announced.
+
+    </div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>🇫🇯 © 2026 Fiji Football Hub</p>
+
+    <p>
+        Independent Fiji football information website
+    </p>
+
+</footer>
+
 
 </body>
+
     </html>
