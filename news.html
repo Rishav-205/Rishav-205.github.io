@@ -1,384 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>News | Fiji Football Hub</title>
+<title>Fiji Football Hub - Teams</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        body {
-            background: #f2f5f8;
-            color: #222;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        header {
-            background: linear-gradient(135deg, #0057b8, #003b7a);
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+body{
+    background:#eef2f5;
+    color:#222;
+}
 
-        header h1 {
-            font-size: 30px;
-        }
+header{
+    background:#0757b8;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
 
-        header p {
-            margin-top: 6px;
-            font-size: 14px;
-        }
+header h1{
+    font-size:30px;
+}
 
-        nav {
-            background: #002b5c;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+header p{
+    margin-top:7px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 16px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+.container{
+    width:94%;
+    max-width:1000px;
+    margin:25px auto;
+}
 
-        nav a:hover {
-            background: #0057b8;
-        }
+.team{
+    background:white;
+    border-radius:15px;
+    margin-bottom:25px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
 
-        .hero {
-            background: linear-gradient(135deg, #0057b8, #00a651);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
+.team-title{
+    background:#0757b8;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
 
-        .hero h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+.team-title h2{
+    font-size:24px;
+}
 
-        .hero p {
-            font-size: 16px;
-        }
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-bottom:18px;
+}
 
-        .container {
-            max-width: 950px;
-            margin: auto;
-            padding: 30px 15px;
-        }
+.info-box{
+    background:#f1f4f7;
+    padding:13px;
+    border-radius:9px;
+}
 
-        .section-title {
-            text-align: center;
-            color: #0057b8;
-            margin-bottom: 25px;
-        }
+.info-box strong{
+    display:block;
+    margin-bottom:5px;
+}
 
-        .news-card {
-            background: white;
-            margin-bottom: 20px;
-            padding: 22px;
-            border-radius: 14px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+.achievement{
+    background:#fff8dc;
+    border-left:5px solid #f0b400;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:18px;
+}
 
-        .tag {
-            display: inline-block;
-            background: #0057b8;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.achievement h3{
+    margin-bottom:8px;
+}
 
-        .news-card h3 {
-            color: #003b7a;
-            font-size: 21px;
-            margin-bottom: 8px;
-        }
+.players{
+    margin-top:10px;
+}
 
-        .date {
-            color: #777;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
+.players h3{
+    margin-bottom:10px;
+}
 
-        .news-card p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+.players ul{
+    list-style:none;
+}
 
-        .read-more {
-            display: inline-block;
-            background: #0057b8;
-            color: white;
-            text-decoration: none;
-            padding: 9px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-        }
+.players li{
+    background:#f5f6f7;
+    padding:10px;
+    margin:5px 0;
+    border-radius:7px;
+}
 
-        .read-more:hover {
-            background: #003b7a;
-        }
+.position{
+    float:right;
+    font-weight:bold;
+    color:#0757b8;
+}
 
-        .source {
-            background: white;
-            padding: 20px;
-            margin-top: 30px;
-            border-radius: 12px;
-            text-align: center;
-            color: #555;
-            line-height: 1.6;
-        }
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
 
-        .source a {
-            color: #0057b8;
-            font-weight: bold;
-        }
-
-        footer {
-            margin-top: 30px;
-            background: #002b5c;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        footer p {
-            margin: 5px;
-            font-size: 14px;
-        }
-    </style>
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>🇫🇯 FIJI FOOTBALL HUB</h1>
-    <p>Your home for football in Fiji</p>
+<h1>🇫🇯 Fiji Football Hub</h1>
+<p>Fiji Premier League Teams - 2026</p>
 </header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="fixtures.html">Fixtures</a>
-    <a href="teams.html">Teams</a>
-    <a href="results.html">Results</a>
-    <a href="table.html">Table</a>
-    <a href="news.html">News</a>
-</nav>
-
-<section class="hero">
-    <h2>📰 Football News</h2>
-    <p>Latest Fiji and Oceania football updates</p>
-</section>
 
 <div class="container">
 
-    <h2 class="section-title">🇫🇯 Latest News</h2>
 
-    <!-- NEWS 1 -->
-    <div class="news-card">
+<!-- ================= BA ================= -->
 
-        <span class="tag">OFC CHAMPIONS LEAGUE</span>
+<div class="team">
 
-        <h3>
-            Rewa FC represents Fiji in OFC Men's Champions League
-        </h3>
+<div class="team-title">
+<h2>⚽ Ba FC</h2>
+</div>
 
-        <div class="date">
-            22 July 2026
-        </div>
+<div class="info">
 
-        <p>
-            Rewa FC will represent Fiji at the 2026 OFC Men's
-            Champions League, hosted in Fiji from 9 to 22 August.
-            The Delta Tigers were drawn in Group B alongside
-            Galaxy FC, Lae City FC and Tupapa Maraerenga FC.
-        </p>
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
 
-        <a class="read-more"
-           href="https://www.fijifootball.com.fj/rewa-fc-set-for-ofc-mens-champions-league-campaign-on-home-soil/"
-           target="_blank">
-            Read Official Story →
-        </a>
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Govind Park</span>
+</div>
 
-    </div>
+</div>
 
+<div class="achievement">
 
-    <!-- NEWS 2 -->
-    <div class="news-card">
+<h3>🏆 Major Achievements</h3>
 
-        <span class="tag">EXTRA PREMIER LEAGUE</span>
+<ul>
+<li>Multiple Fiji Premier League titles</li>
+<li>Multiple Inter-District Championship titles</li>
+<li>Multiple Battle of the Giants titles</li>
+<li>Multiple Fiji FACT titles</li>
+</ul>
 
-        <h3>
-            Ba extends lead as title race intensifies
-        </h3>
+</div>
 
-        <div class="date">
-            3 August 2026
-        </div>
+<div class="players">
 
-        <p>
-            Ba FC strengthened its position at the top of the
-            2026 Extra Premier League as the domestic title race
-            continues.
-        </p>
+<h3>👥 Players</h3>
 
-        <a class="read-more"
-           href="https://www.fijifootball.com.fj/"
-           target="_blank">
-            Read on Fiji FA →
-        </a>
+<ul>
+<li>Isikeli Sevanaia <span class="position">DF</span></li>
+<li>Misiwani Nairube <span class="position">MF</span></li>
+<li>Melvin Prakash <span class="position">FW</span></li>
+<li>Ilisoni Koro <span class="position">GK</span></li>
+<li>Isimeli Gavidi <span class="position">DF</span></li>
+<li>Suliano Tawanakoro <span class="position">MF</span></li>
+<li>Saidu Muhammed <span class="position">FW</span></li>
+<li>Jone Loga <span class="position">DF</span></li>
+<li>Jone Natavalawe <span class="position">MF</span></li>
+<li>Manasa Kubucaucau <span class="position">FW</span></li>
+<li>Mitieli Naiviro <span class="position">DF</span></li>
+<li>Gabriel Emmanuel <span class="position">FW</span></li>
+<li>Praneel Naidu <span class="position">MF</span></li>
+<li>Kishan Sami <span class="position">DF</span></li>
+<li>Samuel Navoce <span class="position">GK</span></li>
+<li>Peceli Sukabula <span class="position">DF</span></li>
+<li>Rusiate Doidoi <span class="position">MF</span></li>
+<li>Etonia Dogalau <span class="position">FW</span></li>
+<li>Sairusi Nalaubu <span class="position">FW</span></li>
+<li>Faazil Faizul Ali <span class="position">MF</span></li>
+<li>Elijah Abetem <span class="position">DF</span></li>
+<li>Saula Muatini <span class="position">DF</span></li>
+<li>Waisea Naicovu <span class="position">MF</span></li>
+</ul>
 
-    </div>
-
-
-    <!-- NEWS 3 -->
-    <div class="news-card">
-
-        <span class="tag">OFC</span>
-
-        <h3>
-            OFC Men's Champions League reaches semi-final stage
-        </h3>
-
-        <div class="date">
-            18 August 2026
-        </div>
-
-        <p>
-            Four clubs remain in contention as the 2026 OFC Men's
-            Champions League enters its semi-final stage in Fiji.
-        </p>
-
-        <a class="read-more"
-           href="https://www.oceaniafootball.com/ofc-mens-champions-league-2026-semi-finals-preview/"
-           target="_blank">
-            Read OFC Preview →
-        </a>
-
-    </div>
+</div>
+</div>
 
 
-    <!-- NEWS 4 -->
-    <div class="news-card">
+<!-- ================= LABASA ================= -->
 
-        <span class="tag">FIJI FOOTBALL</span>
+<div class="team">
 
-        <h3>
-            Fiji hosts major OFC football tournaments in 2026
-        </h3>
+<div class="team-title">
+<h2>⚽ Labasa FC</h2>
+</div>
 
-        <div class="date">
-            2026
-        </div>
+<div class="info">
 
-        <p>
-            Fiji is hosting several major Oceania Football
-            Confederation tournaments during 2026, highlighting
-            the country's role in regional football.
-        </p>
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
 
-        <a class="read-more"
-           href="https://www.fijifootball.com.fj/fiji-to-host-major-ofc-football-tournaments-in-2026/"
-           target="_blank">
-            Read Official Story →
-        </a>
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Subrail Park</span>
+</div>
 
-    </div>
+</div>
 
+<div class="achievement">
 
-    <!-- NEWS 5 -->
-    <div class="news-card">
+<h3>🏆 Major Achievements</h3>
 
-        <span class="tag">YOUTH FOOTBALL</span>
+<ul>
+<li>Fiji Premier League titles</li>
+<li>Inter-District Championship titles</li>
+<li>Battle of the Giants titles</li>
+<li>Fiji FACT titles</li>
+</ul>
 
-        <h3>
-            Fiji make strong start at OFC U-16 Men's Championship
-        </h3>
+</div>
 
-        <div class="date">
-            12 July 2026
-        </div>
+<div class="players">
 
-        <p>
-            Fiji began its OFC U-16 Men's Championship campaign
-            with a 2–0 victory over New Caledonia in Papua New Guinea.
-        </p>
+<h3>👥 Players</h3>
 
-        <a class="read-more"
-           href="https://www.oceaniafootball.com/fiji-make-winning-start-at-ofc-u-16-mens-championship/"
-           target="_blank">
-            Read OFC Report →
-        </a>
+<ul>
+<li>Jitoko Vulava <span class="position">GK</span></li>
+<li>Simione Tamanisau <span class="position">GK</span></li>
+<li>Steven Dean <span class="position">DF</span></li>
+<li>Kartik Sharma <span class="position">MF</span></li>
+<li>Akeimi Ralulu <span class="position">DF</span></li>
+<li>Jone Lalagavesi <span class="position">MF</span></li>
+<li>Bhavitesh Naidu <span class="position">FW</span></li>
+<li>Kitione Raleqeleqe <span class="position">DF</span></li>
+<li>Avichal Lal <span class="position">MF</span></li>
+<li>Iliesa Lino <span class="position">FW</span></li>
+<li>Taniela Evo Waqa <span class="position">DF</span></li>
+<li>Iowane Matanisiga <span class="position">MF</span></li>
+<li>Dan Steiner <span class="position">DF</span></li>
+<li>Navitesh Kumar <span class="position">MF</span></li>
+<li>Jovesa Uqe <span class="position">FW</span></li>
+<li>Timoci Naitini <span class="position">DF</span></li>
+<li>Ryan David <span class="position">FW</span></li>
+<li>Rohan Naidu <span class="position">MF</span></li>
+<li>Selesitino Baleicikobia <span class="position">DF</span></li>
+<li>France Catarogo <span class="position">FW</span></li>
+<li>Meli Codro <span class="position">MF</span></li>
+<li>Aporosa Yada <span class="position">DF</span></li>
+<li>Gerard Avock <span class="position">FW</span></li>
+<li>Melvin Mani <span class="position">MF</span></li>
+<li>Simione Ragoneturaga <span class="position">DF</span></li>
+<li>Peniasi Rotidara <span class="position">FW</span></li>
+<li>Ashneel Raju <span class="position">MF</span></li>
+<li>Chris Hatarau <span class="position">DF</span></li>
+<li>Miller Loloa <span class="position">FW</span></li>
+</ul>
 
-    </div>
-
-
-    <!-- NEWS 6 -->
-    <div class="news-card">
-
-        <span class="tag">DEVELOPMENT</span>
-
-        <h3>
-            Fiji FA staff gain football development experience
-            through OFC programme
-        </h3>
-
-        <div class="date">
-            6 August 2026
-        </div>
-
-        <p>
-            Eight Fiji Football Association staff travelled to
-            Auckland as part of the OFC Placement Programme,
-            gaining experience across different areas of football
-            development.
-        </p>
-
-        <a class="read-more"
-           href="https://www.oceaniafootball.com/fiji-football-association-staff-gain-valuable-insights-through-ofc-study-visit-to-new-zealand/"
-           target="_blank">
-            Read OFC Story →
-        </a>
-
-    </div>
+</div>
+</div>
 
 
-    <div class="source">
+<!-- ================= LAUTOKA ================= -->
 
-        <strong>📌 News sources</strong>
+<div class="team">
 
-        <p>
-            News is collected from official Fiji Football
-            Association and Oceania Football Confederation sources.
-        </p>
+<div class="team-title">
+<h2>⚽ Lautoka FC</h2>
+</div>
 
-        <p>
-            <strong>Data checked: 19 August 2026</strong>
-        </p>
+<div class="info">
 
-    </div>
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Churchill Park</span>
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Fiji Premier League titles</li>
+<li>Inter-District Championship titles</li>
+<li>Battle of the Giants titles</li>
+<li>Fiji FACT title</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+<li>Mohammed Alam <span class="position">GK</span></li>
+<li>Atunaisa Naucukidi <span class="position">DF</span></li>
+<li>Senirusi Bokini <span class="position">DF</span></li>
+<li>Epeli Vunibola <span class="position">MF</span></li>
+<li>Frank Dansey <span class="position">FW</span></li>
+<li>Apisalome Ravouvou <span class="position">MF</span></li>
+<li>Sekove Luma <span class="position">DF</span></li>
+<li>Felix Joseph <span class="position">FW</span></li>
+<li>Panapasa Wirikoto <span class="position">DF</span></li>
+<li>Josefa Ravula <span class="position">MF</span></li>
+<li>Shahil Prasad <span class="position">FW</span></li>
+<li>Shahid Ali <span class="position">MF</span></li>
+<li>Simione Nabenu <span class="position">DF</span></li>
+<li>Poasa Bainivalu <span class="position">DF</span></li>
+<li>Sialesi Vatanatawake <span class="position">MF</span></li>
+<li>Sitiveni Cavuilagi <span class="position">FW</span></li>
+<li>Shiva Pillay <span class="position">MF</span></li>
+<li>Sailasa Naicegu <span class="position">DF</span></li>
+<li>Ravuso Fou <span class="position">FW</span></li>
+<li>Zibraaz Sahib <span class="position">MF</span></li>
+<li>Epeli Leiroti <span class="position">DF</span></li>
+<li>Shazil Ali <span class="position">FW</span></li>
+<li>Shivam Naidu <span class="position">MF</span></li>
+<li>Rusiate Matarerega <span class="position">DF</span></li>
+<li>Maciu Tuinuku <span class="position">FW</span></li>
+</ul>
+
+</div>
+</div>
+
+
+<!-- ================= NADI ================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Nadi FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Prince Charles Park</span>
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Fiji Premier League titles</li>
+<li>Inter-District Championship titles</li>
+<li>Battle of the Giants titles</li>
+<li>Fiji FACT titles</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+<li>Verified 2026 player <span class="position">GK</span></li>
+<li>Verified 2026 player <span class="position">DF</span></li>
+<li>Verified 2026 player <span class="position">MF</span></li>
+<li>Verified 2026 player <span class="position">FW</span></li>
+</ul>
+
+</div>
+</div>
+
+
+<!-- ================= NADROGA ================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Nadroga FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Lawaqa Park</span>
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Fiji Premier League championships</li>
+<li>Inter-District Championship achievements</li>
+<li>Battle of the Giants achievements</li>
+<li>Fiji FACT achievements</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+<li>Verified 2026 player <span class="position">GK</span></li>
+<li>Verified 2026 player <span class="position">DF</span></li>
+<li>Verified 2026 player <span class="position">MF</span></li>
+<li>Verified 2026 player <span class="position">FW</span></li>
+</ul>
+
+</div>
+</div>
+
+
+<!-- ================= NASINU ================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Nasinu FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Designated home venue</span>
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Fiji FACT appearances</li>
+<li>Inter-District Championship appearances</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+<li>Verified 2026 player <span class="position">GK</span></li>
+<li>Verified 2026 player <span class="position">DF</span></li>
+<li>Verified 2026 player <span class="position">MF</span></li>
+<li>Verified 2026 player <span class="position">FW</span></li>
+</ul>
+
+</div>
+</div>
+
+
+<!-- ================= NAVUA ================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Navua FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Narain Park</span>
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Inter-District Championship achievements</li>
+<li>Battle of the Giants appearances</li>
+<li>Fiji FACT appearances</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+<li>Verified 2026 player <span class="position">GK</span></li>
+<li>Verified 2026 player <span class="position">DF</span></li>
+<li>Verified 2026 player <span class="position">MF</span></li>
+<li>Verified 2026 player <span class="position">FW</span></li>
+</ul>
+
+</div>
+</div>
+
+
+<!-- ================= REWA ================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Rewa FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Ratu Cakobau Park</span>
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Fiji Premier League titles</li>
+<li>Major domestic cup achievements</li>
+<li>Inter-District Championship achievements</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+<li>James Do'oro <span class="position">GK</span></li>
+<li>Epeli Loaniceva <span class="position">DF</span></li>
+<li>Jaiden Shankar <span class="position">MF</span></li>
+<li>Verified 2026 player <span class="position">FW</span></li>
+</ul>
+
+</div>
+</div>
+
+
+<!-- ================= SUVA ================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Suva FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>ANZ Stadium</span>
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Fiji Premier League titles</li>
+<li>Fiji FACT titles</li>
+<li>Inter-District Championship achievements</li>
+<li>Battle of the Giants achievements</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+<li>Verified 2026 player <span class="position">GK</span></li>
+<li>Verified 2026 player <span class="position">DF</span></li>
+<li>Verified 2026 player <span class="position">MF</span></li>
+<li>Verified 2026 player <span class="position">FW</span></li>
+</ul>
+
+</div>
+</div>
+
+
+<!-- ================= TAILEVU NAITASIRI ================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Tailevu Naitasiri FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+<span>Update verified 2026 manager</span>
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+<span>Designated home venue</span>
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Inter-District Championship participation</li>
+<li>Premier Division achievements</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+<li>Verified 2026 player <span class="position">GK</span></li>
+<li>Verified 2026 player <span class="position">DF</span></li>
+<li>Verified 2026 player <span class="position">MF</span></li>
+<li>Verified 2026 player <span class="position">FW</span></li>
+</ul>
+
+</div>
+</div>
+
 
 </div>
 
 <footer>
-    <p>🇫🇯 Fiji Football Hub</p>
-    <p>© 2026 Fiji Football Hub</p>
+<p>© 2026 Fiji Football Hub 🇫🇯⚽</p>
+<p>Football information for Fiji</p>
 </footer>
 
 </body>
-        </html>
+    </html>
