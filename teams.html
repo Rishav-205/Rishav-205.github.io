@@ -1,385 +1,869 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Teams | Fiji Football Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>Fiji Football Hub - Teams</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #111;
-        }
+<style>
 
-        header {
-            background: #0b1f4b;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-        header h1 {
-            font-size: 30px;
-            margin-bottom: 6px;
-        }
+body{
+    background:#eef2f5;
+    color:#222;
+}
 
-        header p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
+header{
+    background:#0757b8;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
 
-        nav {
-            background: #06152f;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+header h1{
+    font-size:30px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 13px 15px;
-            font-size: 14px;
-        }
+header p{
+    margin-top:6px;
+}
 
-        nav a:hover {
-            background: #173a78;
-        }
+nav{
+    background:#111;
+    padding:12px;
+    text-align:center;
+}
 
-        .container {
-            width: 94%;
-            max-width: 1100px;
-            margin: 25px auto;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 6px;
+    font-size:14px;
+}
 
-        .page-title {
-            text-align: center;
-            margin-bottom: 8px;
-            color: #0b1f4b;
-        }
+.container{
+    width:94%;
+    max-width:1000px;
+    margin:25px auto;
+}
 
-        .intro {
-            text-align: center;
-            color: #555;
-            margin-bottom: 25px;
-        }
+.team{
+    background:white;
+    border-radius:15px;
+    margin-bottom:25px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
 
-        .teams-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 18px;
-        }
+.team-title{
+    background:#0757b8;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
 
-        .team-card {
-            background: white;
-            border-radius: 14px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-top: 5px solid #0b1f4b;
-        }
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-bottom:18px;
+}
 
-        .team-card h2 {
-            color: #0b1f4b;
-            margin-bottom: 5px;
-        }
+.info-box{
+    background:#f1f4f7;
+    padding:14px;
+    border-radius:9px;
+}
 
-        .team-location {
-            color: #777;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
+.info-box strong{
+    display:block;
+    margin-bottom:5px;
+}
 
-        .competition {
-            display: inline-block;
-            background: #e9eef8;
-            color: #0b1f4b;
-            padding: 5px 9px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 15px;
-        }
+.achievement{
+    background:#fff8dc;
+    border-left:5px solid #f0b400;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:18px;
+}
 
-        details {
-            border-top: 1px solid #ddd;
-            padding-top: 12px;
-        }
+.achievement h3{
+    margin-bottom:8px;
+}
 
-        summary {
-            cursor: pointer;
-            font-weight: bold;
-            color: #0b1f4b;
-        }
+.players h3{
+    margin-bottom:10px;
+}
 
-        .squad {
-            margin-top: 12px;
-        }
+.players ul{
+    list-style:none;
+}
 
-        .player {
-            background: #f4f6f8;
-            padding: 9px;
-            margin: 6px 0;
-            border-radius: 7px;
-            font-size: 14px;
-        }
+.players li{
+    background:#f5f6f7;
+    padding:11px;
+    margin:5px 0;
+    border-radius:7px;
+}
 
-        .player span {
-            color: #666;
-        }
+.position{
+    float:right;
+    font-weight:bold;
+    color:#0757b8;
+}
 
-        .coming {
-            color: #777;
-            font-style: italic;
-            font-size: 14px;
-            line-height: 1.5;
-        }
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
 
-        footer {
-            margin-top: 35px;
-            background: #06152f;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 13px;
-        }
+</style>
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 25px;
-            }
-
-            nav a {
-                padding: 11px 9px;
-                font-size: 13px;
-            }
-
-            .teams-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
+
 <header>
-    <h1>🇫🇯 Fiji Football Hub</h1>
-    <p>Teams • Players • Fixtures • Results • News</p>
+
+<h1>🇫🇯 Fiji Football Hub</h1>
+
+<p>Fiji Premier League Teams - 2026</p>
+
 </header>
 
+
 <nav>
-    <a href="index.html">Home</a>
-    <a href="fixtures.html">Fixtures</a>
-    <a href="teams.html">Teams</a>
-    <a href="results.html">Results</a>
-    <a href="tables.html">Tables</a>
-    <a href="news.html">News</a>
+
+<a href="index.html">Home</a>
+<a href="fixtures.html">Fixtures</a>
+<a href="teams.html">Teams</a>
+<a href="tables.html">Tables</a>
+<a href="competitions.html">Competitions</a>
+<a href="news.html">News</a>
+
 </nav>
+
 
 <div class="container">
 
-    <h1 class="page-title">⚽ Fiji Football Teams</h1>
 
-    <p class="intro">
-        2026 Extra Premier League teams and squad information.
-    </p>
+<!-- ================================================= -->
+<!-- BA FC -->
+<!-- ================================================= -->
 
-    <div class="teams-grid">
+<div class="team">
 
-        <!-- BA -->
-        <div class="team-card">
-            <h2>🖤 Ba FC</h2>
-            <p class="team-location">Ba</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- LABASA -->
-        <div class="team-card">
-            <h2>🦁 Labasa FC</h2>
-            <p class="team-location">Labasa</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- LAUTOKA -->
-        <div class="team-card">
-            <h2>🔵 Lautoka FC</h2>
-            <p class="team-location">Lautoka</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- NADI -->
-        <div class="team-card">
-            <h2>⚽ Nadi FC</h2>
-            <p class="team-location">Nadi</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- NADROGA -->
-        <div class="team-card">
-            <h2>🟢 Nadroga FC</h2>
-            <p class="team-location">Nadroga</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- NASINU -->
-        <div class="team-card">
-            <h2>🔴 Nasinu FC</h2>
-            <p class="team-location">Nasinu</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- NAVUA -->
-        <div class="team-card">
-            <h2>🟡 Navua FC</h2>
-            <p class="team-location">Navua</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- REWA -->
-        <div class="team-card">
-            <h2>🐯 Rewa FC</h2>
-            <p class="team-location">Rewa</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- SUVA -->
-        <div class="team-card">
-            <h2>🔵 Suva FC</h2>
-            <p class="team-location">Suva</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-        <!-- TAILEVU NAITASIRI -->
-        <div class="team-card">
-            <h2>⚫ Tailevu Naitasiri FC</h2>
-            <p class="team-location">Tailevu Naitasiri</p>
-            <span class="competition">Extra Premier League 2026</span>
-
-            <details>
-                <summary>View Squad</summary>
-
-                <div class="squad">
-                    <p class="coming">
-                        Player information will be added here after
-                        official squad information is verified.
-                    </p>
-                </div>
-            </details>
-        </div>
-
-    </div>
+<div class="team-title">
+<h2>⚽ Ba FC</h2>
 </div>
 
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Ravinesh Kumar
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Govind Park
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>22× National League champions</li>
+<li>2026 Extra Premier League champions</li>
+<li>2026 BiC Fiji FACT champions</li>
+<li>Multiple Battle of the Giants titles</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Isikeli Sevanaia <span class="position">GK</span></li>
+<li>Misiwani Nairube <span class="position">GK</span></li>
+<li>Melvin Prakash <span class="position">GK</span></li>
+
+<!-- Add remaining verified Ba players here -->
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- LABASA FC -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Labasa FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Alvin Chand
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Subrail Park
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>2025 BiC Fiji FACT champions</li>
+<li>2025 Extra Battle of the Giants champions</li>
+<li>Multiple major domestic competition appearances</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Jitoko Vulava <span class="position">GK</span></li>
+<li>Simione Tamanisau <span class="position">GK</span></li>
+<li>Kartik Sharma <span class="position">GK</span></li>
+
+<li>Akeimi Ralulu <span class="position">DF</span></li>
+<li>Jone Lalagavesi <span class="position">DF</span></li>
+<li>Bhavitesh Naidu <span class="position">DF</span></li>
+<li>Kitione Raleqeleqe <span class="position">DF</span></li>
+<li>Avichal Lal <span class="position">DF</span></li>
+<li>Iliesa Lino <span class="position">DF</span></li>
+
+<li>Rohan Naidu <span class="position">MF</span></li>
+
+<li>Taniela Evo Waqa <span class="position">FW</span></li>
+<li>Ashneel Raju <span class="position">FW</span></li>
+<li>Chris Hatarau <span class="position">FW</span></li>
+<li>Miller Loloa <span class="position">FW</span></li>
+
+<!-- Add remaining verified Labasa players here -->
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- LAUTOKA FC -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Lautoka FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Batram Suri
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Churchill Park
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Battle of the Giants champions — 1985</li>
+<li>Battle of the Giants champions — 2016</li>
+<li>Battle of the Giants champions — 2024</li>
+<li>Multiple major domestic finals</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Mohammed Alam <span class="position">GK</span></li>
+<li>Atunaisa Naucukidi <span class="position">GK</span></li>
+<li>Senirusi Bokini <span class="position">GK</span></li>
+<li>Epeli Vunibola <span class="position">GK</span></li>
+<li>Frank Dansey <span class="position">GK</span></li>
+
+<li>Apisalome Ravouvou <span class="position">DF</span></li>
+<li>Sekove Luma <span class="position">DF</span></li>
+<li>Felix Joseph <span class="position">DF</span></li>
+<li>Panapasa Wirikoto <span class="position">DF</span></li>
+<li>Josefa Ravula <span class="position">DF</span></li>
+<li>Shahil Prasad <span class="position">DF</span></li>
+<li>Shahid Ali <span class="position">DF</span></li>
+<li>Simione Nabenu <span class="position">DF</span></li>
+<li>Poasa Bainivalu <span class="position">DF</span></li>
+<li>Sialesi Vatanatawake <span class="position">DF</span></li>
+
+<li>Sitiveni Cavuilagi <span class="position">MF</span></li>
+<li>Shiva Pillay <span class="position">MF</span></li>
+<li>Sailasa Naicegu <span class="position">MF</span></li>
+<li>Ravuso Fou <span class="position">MF</span></li>
+<li>Zibraaz Sahib <span class="position">MF</span></li>
+<li>Epeli Leiroti <span class="position">MF</span></li>
+<li>Shazil Ali <span class="position">MF</span></li>
+<li>Shivam Naidu <span class="position">MF</span></li>
+
+<li>Rusiate Matarerega <span class="position">FW</span></li>
+<li>Maciu Tuinuku <span class="position">FW</span></li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- NADI FC -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Nadi FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Babs Khan
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Prince Charles Park
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>5× Battle of the Giants champions</li>
+<li>1978 BOG champions</li>
+<li>1980 BOG champions</li>
+<li>1983 BOG champions</li>
+<li>1986 BOG champions</li>
+<li>1996 BOG champions</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Joela Biuvanua <span class="position">GK</span></li>
+<li>Viliame Vuinakelo <span class="position">GK</span></li>
+<li>Ratu Halstead <span class="position">GK</span></li>
+<li>Jacob Chand <span class="position">GK</span></li>
+
+<li>Aron Naicker <span class="position">DF</span></li>
+<li>Shaheel Valentine <span class="position">DF</span></li>
+<li>Mohammed Shabez <span class="position">DF</span></li>
+<li>Elvis Raju <span class="position">DF</span></li>
+<li>Mohammed Shameez <span class="position">DF</span></li>
+<li>Krishhil Kant <span class="position">DF</span></li>
+<li>Rayyaan Mohammed <span class="position">DF</span></li>
+<li>Ilimotama Jese <span class="position">DF</span></li>
+<li>Mohammed Ayman <span class="position">DF</span></li>
+<li>Steven Koti <span class="position">DF</span></li>
+<li>Afraz Ali <span class="position">DF</span></li>
+
+<li>William Valentine <span class="position">MF</span></li>
+<li>Nilkash Prasad <span class="position">MF</span></li>
+<li>Apolosi Seru <span class="position">MF</span></li>
+<li>Beniamino Lebatavatava <span class="position">MF</span></li>
+<li>Prashant Reddy <span class="position">MF</span></li>
+<li>Eneriko Matau <span class="position">MF</span></li>
+<li>Jonasa Ravukitiliva <span class="position">MF</span></li>
+<li>Christopher Kumar <span class="position">MF</span></li>
+<li>Vishant Reddy <span class="position">MF</span></li>
+<li>Malelili Nainoka <span class="position">MF</span></li>
+
+<li>Jimson Abana <span class="position">FW</span></li>
+<li>Tuiba Batiratu <span class="position">FW</span></li>
+<li>Jack Tokaki <span class="position">FW</span></li>
+<li>Brian Charitar <span class="position">FW</span></li>
+<li>Panapasa Tawakece <span class="position">FW</span></li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- NADROGA FC -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Nadroga FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Garfil Coaster
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Lawaqa Park
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Fiji Premier League champions — 1989</li>
+<li>Fiji Premier League champions — 1990</li>
+<li>Fiji Premier League champions — 1993</li>
+<li>Battle of the Giants champions — 1989</li>
+<li>Battle of the Giants champions — 1991</li>
+<li>Battle of the Giants champions — 2002</li>
+<li>Fiji FACT champions — 1993</li>
+<li>Fiji FACT champions — 2001</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Jione Naitau <span class="position">GK</span></li>
+<li>Sakeo Taganeca <span class="position">GK</span></li>
+<li>Arish Pratap <span class="position">GK</span></li>
+
+<li>William Khan <span class="position">DF</span></li>
+<li>Vrishab Nadan <span class="position">DF</span></li>
+<li>Tuidama Gosai <span class="position">DF</span></li>
+<li>Semesa Sacere <span class="position">DF</span></li>
+<li>Joel Chand <span class="position">DF</span></li>
+<li>Romit Narayan <span class="position">DF</span></li>
+<li>Ravinesh Reddy <span class="position">DF</span></li>
+<li>Jone Ralumu <span class="position">DF</span></li>
+
+<li>Shivnil Chand <span class="position">MF</span></li>
+<li>Dev Raj <span class="position">MF</span></li>
+
+<li>Orisi Vatunino <span class="position">FW</span></li>
+<li>Tomasi Tuicakau <span class="position">FW</span></li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- NASINU FC -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Nasinu FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Abunesh Kapur
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Fiji FA Academy Ground
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Two-time Battle of the Giants finalists</li>
+<li>2026 BiC Fiji FACT participation</li>
+<li>50th anniversary season in 2026</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Emori Ragata <span class="position">GK</span></li>
+<li>Apete Ravudolo <span class="position">GK</span></li>
+<li>Kelemedi Matou <span class="position">DF</span></li>
+<li>Bruce Hughes <span class="position">FW</span></li>
+
+<!-- Add remaining verified Nasinu squad -->
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- NAVUA FC -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Navua FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Saiyad Ali
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Uprising Resort Ground
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Major domestic competition appearances</li>
+<li>2026 BiC Fiji FACT semi-finalists</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Jovilisi Borisi <span class="position">GK</span></li>
+<li>Tevita Ravia <span class="position">GK</span></li>
+<li>Rinish <span class="position">GK</span></li>
+<li>Mohammed Ledua <span class="position">GK</span></li>
+
+<li>Kolinio Sivoki <span class="position">DF</span></li>
+<li>Arami Manumanubhai <span class="position">DF</span></li>
+<li>Vinal Prasad <span class="position">DF</span></li>
+<li>Isake Naduvu <span class="position">DF</span></li>
+<li>Mosese Balenagaga <span class="position">DF</span></li>
+<li>Voniani Smith <span class="position">DF</span></li>
+<li>Reeshab Permal <span class="position">DF</span></li>
+<li>Arav Nadan <span class="position">DF</span></li>
+<li>Sagar Permal <span class="position">DF</span></li>
+
+<li>Jared Rongosulia <span class="position">MF</span></li>
+<li>Usaia Tilivarua <span class="position">MF</span></li>
+<li>Alfred Ali <span class="position">MF</span></li>
+<li>Vineet Chand <span class="position">MF</span></li>
+<li>Sunny Deol <span class="position">MF</span></li>
+
+<li>Mohammad Mekawir <span class="position">FW</span></li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- REWA FC -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Rewa FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager / Coach</strong>
+Ratu Tevita Waranivalu & Priyant Manu
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Ratu Cakobau Park
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>2025 Extra Premier League champions</li>
+<li>2025 FMF Inter-District Championship champions</li>
+<li>2026 Champion vs Champion champions</li>
+<li>2026 OFC Men's Champions League semi-finalists</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>James Do'oro <span class="position">GK</span></li>
+<li>Epeli Loaniceva <span class="position">GK</span></li>
+<li>Jaiden Shankar <span class="position">GK</span></li>
+
+<li>Arush Aron Lal <span class="position">DF</span></li>
+<li>Sitiveni Rakai <span class="position">DF</span></li>
+<li>Patrick Joseph <span class="position">DF</span></li>
+
+<li>Neemish Prasad <span class="position">MF</span></li>
+<li>Ramzan Khan <span class="position">MF</span></li>
+<li>Epeli Valevou <span class="position">MF</span></li>
+<li>Rahul Krishna <span class="position">FW</span></li>
+<li>Semi Matalau <span class="position">FW</span></li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- SUVA FC -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Suva FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Mohammed Erfan
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+HFC Bank Stadium
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Fiji FACT champions — 1995</li>
+<li>Fiji FACT champions — 2012</li>
+<li>Fiji FACT champions — 2020</li>
+<li>Fiji FACT champions — 2022</li>
+<li>Multiple major domestic titles</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Jason Rokovucake <span class="position">GK</span></li>
+<li>Akuila Mataisuva <span class="position">GK</span></li>
+
+<li>Siotame Kubu <span class="position">FW</span></li>
+
+<!-- Add remaining verified Suva squad -->
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- TAILEVU NAITASIRI -->
+<!-- ================================================= -->
+
+<div class="team">
+
+<div class="team-title">
+<h2>⚽ Tailevu Naitasiri FC</h2>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+<strong>👔 Manager</strong>
+Shabneel Prasad
+</div>
+
+<div class="info-box">
+<strong>🏟️ Home Stadium</strong>
+Ratu Cakobau Park
+</div>
+
+</div>
+
+<div class="achievement">
+
+<h3>🏆 Major Achievements</h3>
+
+<ul>
+<li>Premier Division achievements</li>
+<li>Major domestic competition appearances</li>
+</ul>
+
+</div>
+
+<div class="players">
+
+<h3>👥 Players</h3>
+
+<ul>
+
+<li>Sitiveni Matalaba <span class="position">GK</span></li>
+<li>Usaia Tamaniqio <span class="position">GK</span></li>
+<li>Ayush Chand <span class="position">GK</span></li>
+<li>Semi Bulumakau <span class="position">GK</span></li>
+
+<li>Prashant Chand <span class="position">DF</span></li>
+<li>Turendran Kumar <span class="position">DF</span></li>
+<li>Ryheal Ram <span class="position">DF</span></li>
+<li>Rajneel Kumar <span class="position">DF</span></li>
+<li>Iliesa Rokolase <span class="position">DF</span></li>
+<li>Taniela Rakariva <span class="position">DF</span></li>
+<li>Autiko Tumuri <span class="position">DF</span></li>
+<li>Joeli Ranitu <span class="position">DF</span></li>
+
+<li>Shainal Lal <span class="position">MF</span></li>
+<li>Ratu Apenisa Anare <span class="position">MF</span></li>
+<li>Kalisito Veikoka <span class="position">MF</span></li>
+<li>Waisake Tabucava <span class="position">MF</span></li>
+<li>Nischal Lal <span class="position">MF</span></li>
+
+<li>Jason Dau <span class="position">FW</span></li>
+<li>Sailimone Ravonokula <span class="position">FW</span></li>
+<li>Tukai Ravonokula <span class="position">FW</span></li>
+<li>Misaele Draunibaka <span class="position">FW</span></li>
+<li>Votiverasaki Tikomaniisiladi <span class="position">FW</span></li>
+<li>Seremaia Suvei <span class="position">FW</span></li>
+<li>Adriu Nabose <span class="position">FW</span></li>
+<li>Melvish Ram <span class="position">FW</span></li>
+<li>Abdul Ansaar <span class="position">FW</span></li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+</div>
+
+
 <footer>
-    <p>© 2026 Fiji Football Hub 🇫🇯⚽</p>
-    <p>Independent Fiji football information website</p>
+
+<p>© 2026 Fiji Football Hub 🇫🇯⚽</p>
+
+<p>Football information for Fiji</p>
+
 </footer>
 
+
 </body>
-    </html>
+
+</html>
