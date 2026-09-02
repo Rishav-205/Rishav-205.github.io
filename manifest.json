@@ -1,0 +1,22 @@
+{
+  "name": "Fiji Football Hub",
+  "short_name": "Fiji Football Hub",
+  "description": "Your home for football in Fiji.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f2f5f8",
+  "theme_color": "#0057b8",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
