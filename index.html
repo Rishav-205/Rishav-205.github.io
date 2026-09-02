@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Fiji Football Hub 🇫🇯</title>
-
+    
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0057b8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
     <style>
         * {
             margin: 0;
@@ -288,6 +293,19 @@
         <p>🇫🇯 Fiji Football Hub</p>
         <p>© 2026 Fiji Football Hub</p>
     </footer>
+    <script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+        navigator.serviceWorker.register("service-worker.js")
+            .then(function() {
+                console.log("Fiji Football Hub service worker registered");
+            })
+            .catch(function(error) {
+                console.log("Service worker registration failed:", error);
+            });
+    });
+}
+    </script>
 
 </body>
     </html>
