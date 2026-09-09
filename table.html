@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fiji Football Hub - Extra Premier League 2026</title>
+    <title>Fiji Football Hub - Tables 2026</title>
 
     <style>
         * {
@@ -75,11 +75,40 @@
             margin-top: 8px;
         }
 
+        .competition-title {
+            text-align: center;
+            margin: 35px 0 15px;
+        }
+
+        .competition-title h2 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .competition-title p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .group-title {
+            background: #075e2b;
+            color: white;
+            padding: 13px 16px;
+            border-radius: 12px 12px 0 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
         .table-box {
             background: white;
             border-radius: 12px;
             overflow-x: auto;
             box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+            margin-bottom: 25px;
+        }
+
+        .group-box {
+            overflow: hidden;
         }
 
         table {
@@ -120,6 +149,20 @@
             font-weight: bold;
         }
 
+        .qualified {
+            color: #075e2b;
+            font-weight: bold;
+        }
+
+        .note {
+            background: #eaf4ff;
+            border-left: 5px solid #075e2b;
+            padding: 15px;
+            margin: 10px 0 30px;
+            border-radius: 8px;
+            color: #333;
+        }
+
         footer {
             margin-top: 35px;
             background: #063d1e;
@@ -134,13 +177,18 @@
                 font-size: 23px;
             }
 
-            .title h2 {
+            .title h2,
+            .competition-title h2 {
                 font-size: 21px;
             }
 
             th, td {
                 padding: 11px 7px;
                 font-size: 13px;
+            }
+
+            .group-title {
+                font-size: 17px;
             }
         }
     </style>
@@ -164,9 +212,201 @@
 
 <div class="container">
 
-    <div class="title">
-        <h2>Extra Premier League 2026</h2>
-        <p>Current League Standings</p>
+    <!-- ========================= -->
+    <!-- BATTLE OF THE GIANTS 2026 -->
+    <!-- ========================= -->
+
+    <div class="competition-title">
+        <h2>🏆 Battle of the Giants 2026</h2>
+        <p>Final Pool Stage Standings</p>
+    </div>
+
+    <div class="note">
+        <strong>ℹ️ Pool Stage Completed</strong><br>
+        The BOG pool stage has finished. Suva FC, Nasinu FC, Rewa FC
+        and Ba FC have qualified for the semi-finals.
+    </div>
+
+
+    <!-- GROUP A -->
+
+    <div class="table-box group-box">
+
+        <div class="group-title">
+            Group A
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th>Team</th>
+                    <th>P</th>
+                    <th>W</th>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                    <th>Pts</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td class="position">1</td>
+                    <td>Suva FC</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>+4</td>
+                    <td class="points">6</td>
+                </tr>
+
+                <tr>
+                    <td class="position">2</td>
+                    <td>Nasinu FC</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>+1</td>
+                    <td class="points">6</td>
+                </tr>
+
+                <tr>
+                    <td class="position">3</td>
+                    <td>Labasa FC</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>-1</td>
+                    <td class="points">6</td>
+                </tr>
+
+                <tr>
+                    <td class="position">4</td>
+                    <td>Navua FC</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>-4</td>
+                    <td class="points">0</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- GROUP B -->
+
+    <div class="table-box group-box">
+
+        <div class="group-title">
+            Group B
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th>Team</th>
+                    <th>P</th>
+                    <th>W</th>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                    <th>Pts</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td class="position">1</td>
+                    <td>Rewa FC</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>+4</td>
+                    <td class="points">6</td>
+                </tr>
+
+                <tr>
+                    <td class="position">2</td>
+                    <td>Ba FC</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td class="points">6</td>
+                </tr>
+
+                <tr>
+                    <td class="position">3</td>
+                    <td>Lautoka FC</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>-2</td>
+                    <td class="points">3</td>
+                </tr>
+
+                <tr>
+                    <td class="position">4</td>
+                    <td>Nadi FC</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>-2</td>
+                    <td class="points">3</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- EXTRA PREMIER LEAGUE 2026 -->
+    <!-- ========================= -->
+
+    <div class="competition-title">
+        <h2>⚽ Extra Premier League 2026</h2>
+        <p>Final League Standings</p>
     </div>
 
     <div class="table-box">
@@ -333,4 +573,4 @@
 </footer>
 
 </body>
-    </html>
+                        </html>
