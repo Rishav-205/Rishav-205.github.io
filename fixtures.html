@@ -154,10 +154,10 @@ nav a:hover {
 
 .match {
     display: grid;
-    grid-template-columns: 80px 1fr 55px 1fr;
+    grid-template-columns: 80px 1fr 90px 1fr;
     align-items: center;
     gap: 10px;
-    padding: 18px 15px;
+    padding: 20px 15px;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -175,12 +175,12 @@ nav a:hover {
 .team-left {
     text-align: right;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .vs {
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     color: #64748b;
     font-weight: bold;
 }
@@ -188,15 +188,7 @@ nav a:hover {
 .team-right {
     text-align: left;
     font-weight: bold;
-    font-size: 14px;
-}
-
-/* OPENING */
-
-.opening {
-    background: #fff7df;
-    color: #805f00;
-    font-weight: bold;
+    font-size: 15px;
 }
 
 /* KNOCKOUT */
@@ -209,15 +201,21 @@ nav a:hover {
     border-left: 5px solid #c79519;
 }
 
+.knockout .team-left,
+.knockout .team-right {
+    font-size: 16px;
+}
+
 /* FINAL */
 
 .final-box {
     background: white;
     border-radius: 18px;
-    padding: 25px;
+    padding: 28px 20px;
     text-align: center;
     box-shadow: 0 7px 20px rgba(0,0,0,0.09);
     border-top: 6px solid #d4a017;
+    margin-bottom: 28px;
 }
 
 .final-box h3 {
@@ -302,9 +300,9 @@ footer p {
     }
 
     .match {
-        grid-template-columns: 62px 1fr 35px 1fr;
+        grid-template-columns: 58px 1fr 75px 1fr;
         gap: 5px;
-        padding: 17px 9px;
+        padding: 18px 8px;
     }
 
     .time {
@@ -316,8 +314,13 @@ footer p {
         font-size: 12px;
     }
 
+    .knockout .team-left,
+    .knockout .team-right {
+        font-size: 13px;
+    }
+
     .vs {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .day-header h3 {
@@ -363,7 +366,7 @@ footer p {
 
     <a href="results.html">Results</a>
 
-    <a href="tables.html">Tables</a>
+    <a href="table.html">Tables</a>
 
     <a href="news.html">News</a>
 
@@ -377,9 +380,11 @@ footer p {
 <div class="container">
 
 
+    <!-- PAGE TITLE -->
+
     <div class="page-title">
 
-        <h2>📅 Fixtures</h2>
+        <h2>📅 Upcoming Fixtures</h2>
 
         <p>
             Upcoming Fiji football matches
@@ -388,251 +393,19 @@ footer p {
     </div>
 
 
-    <!-- COMPETITION -->
+    <!-- COMPETITION HERO -->
 
     <div class="competition-hero">
 
         <h3>🏆 Extra BOG 2026</h3>
 
         <p>
-            Battle of the Giants • Official Tournament Fixtures
+            Battle of the Giants • Knockout Stage
         </p>
 
         <span class="live-badge">
-            UPCOMING • 4–13 SEPTEMBER 2026
+            🔥 KNOCKOUT STAGE • 12–13 SEPTEMBER 2026
         </span>
-
-    </div>
-
-
-    <!-- ================= FRIDAY ================= -->
-
-    <div class="match-day">
-
-        <div class="day-header">
-
-            <h3>Friday, 4 September 2026</h3>
-
-            <p>Match Day 1</p>
-
-        </div>
-
-
-        <div class="matches">
-
-
-            <div class="match">
-
-                <div class="time">1:00 PM</div>
-
-                <div class="team-left">Suva FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Navua FC</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">3:00 PM</div>
-
-                <div class="team-left">Labasa FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Nasinu FC</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">5:00 PM</div>
-
-                <div class="team-left">Rewa FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Lautoka FC</div>
-
-            </div>
-
-
-            <div class="match opening">
-
-                <div class="time">7:00 PM</div>
-
-                <div class="team-left">Official</div>
-
-                <div class="vs">OPENING</div>
-
-                <div class="team-right">CEREMONY</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">7:30 PM</div>
-
-                <div class="team-left">Nadi FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Ba FC</div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= SATURDAY ================= -->
-
-    <div class="match-day">
-
-        <div class="day-header">
-
-            <h3>Saturday, 5 September 2026</h3>
-
-            <p>Match Day 2</p>
-
-        </div>
-
-
-        <div class="matches">
-
-
-            <div class="match">
-
-                <div class="time">11:30 AM</div>
-
-                <div class="team-left">Navua FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Nasinu FC</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">1:30 PM</div>
-
-                <div class="team-left">Lautoka FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Nadi FC</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">3:30 PM</div>
-
-                <div class="team-left">Labasa FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Suva FC</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">5:30 PM</div>
-
-                <div class="team-left">Ba FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Rewa FC</div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= SUNDAY ================= -->
-
-    <div class="match-day">
-
-        <div class="day-header">
-
-            <h3>Sunday, 6 September 2026</h3>
-
-            <p>Match Day 3</p>
-
-        </div>
-
-
-        <div class="matches">
-
-
-            <div class="match">
-
-                <div class="time">11:30 AM</div>
-
-                <div class="team-left">Nasinu FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Suva FC</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">1:30 PM</div>
-
-                <div class="team-left">Nadi FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Rewa FC</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">3:30 PM</div>
-
-                <div class="team-left">Navua FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Labasa FC</div>
-
-            </div>
-
-
-            <div class="match">
-
-                <div class="time">5:30 PM</div>
-
-                <div class="team-left">Ba FC</div>
-
-                <div class="vs">VS</div>
-
-                <div class="team-right">Lautoka FC</div>
-
-            </div>
-
-
-        </div>
 
     </div>
 
@@ -645,7 +418,7 @@ footer p {
 
             <h3>Saturday, 12 September 2026</h3>
 
-            <p>🔥 Semi-Finals</p>
+            <p>🔥 BOG Semi-Finals</p>
 
         </div>
 
@@ -653,28 +426,32 @@ footer p {
         <div class="matches">
 
 
+            <!-- SEMI FINAL 1 -->
+
             <div class="match">
 
                 <div class="time">2:00 PM</div>
 
-                <div class="team-left">To Be Decided</div>
+                <div class="team-left">Suva FC</div>
 
                 <div class="vs">SEMI-FINAL 1</div>
 
-                <div class="team-right">To Be Decided</div>
+                <div class="team-right">Ba FC</div>
 
             </div>
 
+
+            <!-- SEMI FINAL 2 -->
 
             <div class="match">
 
                 <div class="time">4:30 PM</div>
 
-                <div class="team-left">To Be Decided</div>
+                <div class="team-left">Rewa FC</div>
 
                 <div class="vs">SEMI-FINAL 2</div>
 
-                <div class="team-right">To Be Decided</div>
+                <div class="team-right">Nasinu FC</div>
 
             </div>
 
@@ -684,7 +461,7 @@ footer p {
     </div>
 
 
-    <!-- ================= FINAL ================= -->
+    <!-- ================= GRAND FINAL ================= -->
 
     <div class="final-box">
 
@@ -698,7 +475,7 @@ footer p {
         <div class="final-match">
 
             <div class="final-team">
-                To Be Decided 
+                Winner SF1
             </div>
 
             <div class="final-vs">
@@ -706,7 +483,7 @@ footer p {
             </div>
 
             <div class="final-team">
-                To Be Decided 
+                Winner SF2
             </div>
 
         </div>
@@ -718,17 +495,21 @@ footer p {
 
     <div class="info">
 
-        <strong>ℹ️ Fixture Updates</strong>
+        <strong>ℹ️ BOG 2026 Knockout Stage</strong>
 
         <br>
 
-        Semi-final and Grand Final teams will be updated
-        once the group stage is completed.
+        The Battle of the Giants pool stage has been completed.
 
         <br><br>
 
-        Fiji Football Hub will update this page when
-        official fixture changes are announced.
+        <strong>Qualified teams:</strong>
+        Suva FC, Ba FC, Rewa FC and Nasinu FC.
+
+        <br><br>
+
+        The Grand Final will feature the winners of the two
+        semi-finals.
 
     </div>
 
@@ -751,4 +532,4 @@ footer p {
 
 </body>
 
-    </html>
+</html>
