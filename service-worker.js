@@ -6,7 +6,7 @@ const FILES_TO_CACHE = [
     "./fixtures.html",
     "./teams.html",
     "./results.html",
-    "./table.html",
+    "./tables.html",
     "./news.html",
     "./competitions.html",
     "./manifest.json"
